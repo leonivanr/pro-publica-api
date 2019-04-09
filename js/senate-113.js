@@ -1,4 +1,4 @@
-var data = 
+var dataSenate =
 {
    "status":"OK",
    "copyright":" Copyright (c) 2019 Pro Publica Inc. All Rights Reserved.",
@@ -6,8 +6,8 @@ var data =
       {
          "congress": "113",
          "chamber": "Senate",
-         
-         
+
+
          "num_results": 105,
          "offset": 0,
          "members": [
@@ -455,7 +455,7 @@ var data =
                  "dw_nominate": -0.615,
                  "ideal_point": -1.055317422,
                  "seniority": "1",
-                 
+
                  "total_votes": 432,
                  "missed_votes": 12,
                  "total_present": 0,
@@ -915,7 +915,7 @@ var data =
                  "dw_nominate": 0.218,
                  "ideal_point": 0.811372575,
                  "seniority": "1",
-                 
+
                  "total_votes": 82,
                  "missed_votes": 12,
                  "total_present": 0,
@@ -1283,7 +1283,7 @@ var data =
                  "dw_nominate": -0.462,
                  "ideal_point": -0.987585557,
                  "seniority": "1",
-                 
+
                  "total_votes": 160,
                  "missed_votes": 6,
                  "total_present": 0,
@@ -2985,7 +2985,7 @@ var data =
                  "dw_nominate": -0.577,
                  "ideal_point": -0.991274696,
                  "seniority": "1",
-                 
+
                  "total_votes": 485,
                  "missed_votes": 12,
                  "total_present": 0,
@@ -4595,7 +4595,7 @@ var data =
                  "dw_nominate": -0.255,
                  "ideal_point": null,
                  "seniority": "1",
-                 
+
                  "total_votes": 340,
                  "missed_votes": 1,
                  "total_present": 0,

@@ -1,4 +1,4 @@
-
+var dataHouse =
 {
    "status":"OK",
    "copyright":" Copyright (c) 2019 Pro Publica Inc. All Rights Reserved.",
@@ -7,7 +7,7 @@
          "congress": "113",
          "chamber": "House",
          
-         
+
          "num_results": 450,
          "offset": 0,
          "members": [
@@ -41,7 +41,7 @@
                  "dw_nominate": -0.468,
                  "ideal_point": null,
                  "seniority": "2",
-                 
+
                  "total_votes": 48,
                  "missed_votes": 2,
                  "total_present": 0,
@@ -179,7 +179,7 @@
                  "dw_nominate": 0.649,
                  "ideal_point": 0.521346012,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 0,
                  "total_present": 2,
@@ -225,7 +225,7 @@
                  "dw_nominate": 0.376,
                  "ideal_point": 0.850284197,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 95,
                  "total_present": 0,
@@ -455,7 +455,7 @@
                  "dw_nominate": 0.277,
                  "ideal_point": 0.61629578,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 27,
                  "total_present": 0,
@@ -501,7 +501,7 @@
                  "dw_nominate": 0.485,
                  "ideal_point": 1.018471332,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 5,
                  "total_present": 0,
@@ -639,7 +639,7 @@
                  "dw_nominate": -0.585,
                  "ideal_point": -1.684111097,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 139,
                  "total_present": 1,
@@ -685,7 +685,7 @@
                  "dw_nominate": -0.426,
                  "ideal_point": -1.239606501,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 23,
                  "total_present": 1,
@@ -777,7 +777,7 @@
                  "dw_nominate": 0.491,
                  "ideal_point": 0.730263632,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 35,
                  "total_present": 2,
@@ -823,7 +823,7 @@
                  "dw_nominate": 0.723,
                  "ideal_point": 1.002272623,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 6,
                  "total_present": 0,
@@ -869,7 +869,7 @@
                  "dw_nominate": -0.229,
                  "ideal_point": -0.56576398,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 6,
                  "total_present": 0,
@@ -1099,7 +1099,7 @@
                  "dw_nominate": 0.58,
                  "ideal_point": 1.121073617,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 16,
                  "total_present": 0,
@@ -1283,7 +1283,7 @@
                  "dw_nominate": -0.394,
                  "ideal_point": -1.21613163,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 1,
                  "total_present": 1,
@@ -1605,7 +1605,7 @@
                  "dw_nominate": 0.824,
                  "ideal_point": null,
                  "seniority": "2",
-                 
+
                  "total_votes": 48,
                  "missed_votes": 1,
                  "total_present": 0,
@@ -1651,7 +1651,7 @@
                  "dw_nominate": 0.689,
                  "ideal_point": 0.9603532,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 12,
                  "total_present": 0,
@@ -1697,7 +1697,7 @@
                  "dw_nominate": 0.376,
                  "ideal_point": 0.891980143,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 6,
                  "total_present": 2,
@@ -1743,7 +1743,7 @@
                  "dw_nominate": 0.604,
                  "ideal_point": 0.920906925,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 11,
                  "total_present": 1,
@@ -1881,7 +1881,7 @@
                  "dw_nominate": -0.285,
                  "ideal_point": -0.796458788,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 4,
                  "total_present": 1,
@@ -1973,7 +1973,7 @@
                  "dw_nominate": 0.39,
                  "ideal_point": 1.044376906,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 16,
                  "total_present": 0,
@@ -2065,7 +2065,7 @@
                  "dw_nominate": -0.235,
                  "ideal_point": -0.517046574,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 21,
                  "total_present": 1,
@@ -2157,7 +2157,7 @@
                  "dw_nominate": 0.544,
                  "ideal_point": 0.955006313,
                  "seniority": "2",
-                 
+
                  "total_votes": 550,
                  "missed_votes": 33,
                  "total_present": 0,
@@ -2525,7 +2525,7 @@
                  "dw_nominate": -0.379,
                  "ideal_point": -0.86296475,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 63,
                  "total_present": 1,
@@ -2571,7 +2571,7 @@
                  "dw_nominate": -0.256,
                  "ideal_point": -0.767577279,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 65,
                  "total_present": 1,
@@ -2709,7 +2709,7 @@
                  "dw_nominate": -0.377,
                  "ideal_point": -1.247903035,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 7,
                  "total_present": 1,
@@ -2847,7 +2847,7 @@
                  "dw_nominate": -0.393,
                  "ideal_point": -0.926943043,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 37,
                  "total_present": 3,
@@ -3077,7 +3077,7 @@
                  "dw_nominate": -0.39,
                  "ideal_point": -1.207278956,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 34,
                  "total_present": 1,
@@ -3583,7 +3583,7 @@
                  "dw_nominate": 0.367,
                  "ideal_point": 0.744530571,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 25,
                  "total_present": 0,
@@ -3629,7 +3629,7 @@
                  "dw_nominate": 0.633,
                  "ideal_point": 1.233796945,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 49,
                  "total_present": 0,
@@ -3813,7 +3813,7 @@
                  "dw_nominate": 0.391,
                  "ideal_point": 0.661683887,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 13,
                  "total_present": 0,
@@ -3951,7 +3951,7 @@
                  "dw_nominate": 0.611,
                  "ideal_point": 1.043747804,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 12,
                  "total_present": 0,
@@ -4043,7 +4043,7 @@
                  "dw_nominate": 0.391,
                  "ideal_point": 0.632098523,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 61,
                  "total_present": 0,
@@ -4089,7 +4089,7 @@
                  "dw_nominate": 0.381,
                  "ideal_point": 0.771428668,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 84,
                  "total_present": 0,
@@ -4365,7 +4365,7 @@
                  "dw_nominate": 0.543,
                  "ideal_point": 0.914415677,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 10,
                  "total_present": 0,
@@ -4503,7 +4503,7 @@
                  "dw_nominate": 0.296,
                  "ideal_point": 0.610109645,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 29,
                  "total_present": 0,
@@ -4641,7 +4641,7 @@
                  "dw_nominate": -0.277,
                  "ideal_point": -0.74895008,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 26,
                  "total_present": 0,
@@ -4733,7 +4733,7 @@
                  "dw_nominate": -0.278,
                  "ideal_point": -0.721859981,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 9,
                  "total_present": 1,
@@ -4779,7 +4779,7 @@
                  "dw_nominate": 0.306,
                  "ideal_point": 0.601636581,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 0,
@@ -4871,7 +4871,7 @@
                  "dw_nominate": 0.665,
                  "ideal_point": 1.090701474,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 4,
                  "total_present": 0,
@@ -4917,7 +4917,7 @@
                  "dw_nominate": 0.592,
                  "ideal_point": 1.047011045,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 153,
                  "total_present": 0,
@@ -5193,7 +5193,7 @@
                  "dw_nominate": -0.315,
                  "ideal_point": -0.680333034,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 78,
                  "total_present": 1,
@@ -5239,7 +5239,7 @@
                  "dw_nominate": 0.504,
                  "ideal_point": 0.844672105,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 62,
                  "total_present": 0,
@@ -5285,7 +5285,7 @@
                  "dw_nominate": 0.738,
                  "ideal_point": 1.439658648,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 2,
                  "total_present": 0,
@@ -5469,7 +5469,7 @@
                  "dw_nominate": 0.406,
                  "ideal_point": 0.855720069,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 17,
                  "total_present": 0,
@@ -5607,7 +5607,7 @@
                  "dw_nominate": -0.251,
                  "ideal_point": -0.590049806,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 33,
                  "total_present": 1,
@@ -5699,7 +5699,7 @@
                  "dw_nominate": -0.313,
                  "ideal_point": -0.880914589,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 20,
                  "total_present": 0,
@@ -5791,7 +5791,7 @@
                  "dw_nominate": 0.548,
                  "ideal_point": 0.934896227,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 4,
                  "total_present": 0,
@@ -5929,7 +5929,7 @@
                  "dw_nominate": 0.526,
                  "ideal_point": 1.051614682,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 57,
                  "total_present": 0,
@@ -6021,7 +6021,7 @@
                  "dw_nominate": 0.472,
                  "ideal_point": 1.038711925,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 0,
@@ -6113,7 +6113,7 @@
                  "dw_nominate": 0.605,
                  "ideal_point": 1.353572211,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 25,
                  "total_present": 0,
@@ -6251,7 +6251,7 @@
                  "dw_nominate": -0.224,
                  "ideal_point": -0.589505042,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 1,
@@ -6343,7 +6343,7 @@
                  "dw_nominate": -0.403,
                  "ideal_point": -1.143089707,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 34,
                  "total_present": 1,
@@ -6527,7 +6527,7 @@
                  "dw_nominate": -0.279,
                  "ideal_point": -0.701447634,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 37,
                  "total_present": 1,
@@ -6573,7 +6573,7 @@
                  "dw_nominate": -0.216,
                  "ideal_point": -0.366400273,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 22,
                  "total_present": 1,
@@ -6665,7 +6665,7 @@
                  "dw_nominate": -0.204,
                  "ideal_point": -0.466615874,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 42,
                  "total_present": 1,
@@ -6711,7 +6711,7 @@
                  "dw_nominate": 0.456,
                  "ideal_point": 0.865588416,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 24,
                  "total_present": 0,
@@ -6849,7 +6849,7 @@
                  "dw_nominate": 0.46,
                  "ideal_point": 0.884381987,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 15,
                  "total_present": 1,
@@ -6895,7 +6895,7 @@
                  "dw_nominate": 0.203,
                  "ideal_point": 0.202238924,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 0,
@@ -7079,7 +7079,7 @@
                  "dw_nominate": 0.616,
                  "ideal_point": 0.982041948,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 159,
                  "total_present": 1,
@@ -7125,7 +7125,7 @@
                  "dw_nominate": 0.659,
                  "ideal_point": 1.342318352,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 19,
                  "total_present": 2,
@@ -7309,7 +7309,7 @@
                  "dw_nominate": -0.363,
                  "ideal_point": -1.197616407,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 35,
                  "total_present": 1,
@@ -7447,7 +7447,7 @@
                  "dw_nominate": 0.41,
                  "ideal_point": 0.804096288,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 25,
                  "total_present": 0,
@@ -7493,7 +7493,7 @@
                  "dw_nominate": 0.544,
                  "ideal_point": 0.621835537,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 9,
                  "total_present": 0,
@@ -7585,7 +7585,7 @@
                  "dw_nominate": 0.219,
                  "ideal_point": 0.371647199,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 87,
                  "total_present": 0,
@@ -7815,7 +7815,7 @@
                  "dw_nominate": -0.369,
                  "ideal_point": -0.975329037,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 134,
                  "total_present": 1,
@@ -7861,7 +7861,7 @@
                  "dw_nominate": 0.215,
                  "ideal_point": 0.37674765,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 91,
                  "total_present": 0,
@@ -7953,7 +7953,7 @@
                  "dw_nominate": 0.605,
                  "ideal_point": 1.09140896,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 20,
                  "total_present": 0,
@@ -7999,7 +7999,7 @@
                  "dw_nominate": 0.495,
                  "ideal_point": 0.960752223,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 65,
                  "total_present": 0,
@@ -8137,7 +8137,7 @@
                  "dw_nominate": 0.324,
                  "ideal_point": 0.553985005,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 10,
                  "total_present": 0,
@@ -8183,7 +8183,7 @@
                  "dw_nominate": -0.311,
                  "ideal_point": -0.900668168,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 41,
                  "total_present": 1,
@@ -8275,7 +8275,7 @@
                  "dw_nominate": 0.38,
                  "ideal_point": 0.549091459,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 317,
                  "total_present": 0,
@@ -8459,7 +8459,7 @@
                  "dw_nominate": 0.659,
                  "ideal_point": 1.371052295,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 16,
                  "total_present": 0,
@@ -8597,7 +8597,7 @@
                  "dw_nominate": -0.355,
                  "ideal_point": -0.803777233,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 161,
                  "total_present": 1,
@@ -8689,7 +8689,7 @@
                  "dw_nominate": 0.671,
                  "ideal_point": 1.384380975,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 22,
                  "total_present": 0,
@@ -8735,7 +8735,7 @@
                  "dw_nominate": 0.744,
                  "ideal_point": 0.834577002,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 20,
                  "total_present": 0,
@@ -8781,7 +8781,7 @@
                  "dw_nominate": -0.425,
                  "ideal_point": -1.162791057,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 35,
                  "total_present": 1,
@@ -8827,7 +8827,7 @@
                  "dw_nominate": 0.635,
                  "ideal_point": 1.140496045,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 11,
                  "total_present": 0,
@@ -8873,7 +8873,7 @@
                  "dw_nominate": 0.49,
                  "ideal_point": 1.067606983,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 15,
                  "total_present": 0,
@@ -8965,7 +8965,7 @@
                  "dw_nominate": 0.568,
                  "ideal_point": 1.041496283,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 31,
                  "total_present": 0,
@@ -9149,7 +9149,7 @@
                  "dw_nominate": -0.484,
                  "ideal_point": -1.274658364,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 32,
                  "total_present": 1,
@@ -9241,7 +9241,7 @@
                  "dw_nominate": 0.429,
                  "ideal_point": 0.94829541,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 1,
                  "total_present": 0,
@@ -9425,7 +9425,7 @@
                  "dw_nominate": 0.23,
                  "ideal_point": null,
                  "seniority": "2",
-                 
+
                  "total_votes": 437,
                  "missed_votes": 0,
                  "total_present": 0,
@@ -9563,7 +9563,7 @@
                  "dw_nominate": 0.255,
                  "ideal_point": 0.505703061,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 20,
                  "total_present": 0,
@@ -9655,7 +9655,7 @@
                  "dw_nominate": -0.329,
                  "ideal_point": -0.894300489,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 34,
                  "total_present": 1,
@@ -9701,7 +9701,7 @@
                  "dw_nominate": -0.459,
                  "ideal_point": -1.146873834,
                  "seniority": "2",
-                 
+
                  "total_votes": 1095,
                  "missed_votes": 18,
                  "total_present": 0,
@@ -9747,7 +9747,7 @@
                  "dw_nominate": 0.317,
                  "ideal_point": 0.821348217,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 5,
                  "total_present": 0,
@@ -9793,7 +9793,7 @@
                  "dw_nominate": -0.421,
                  "ideal_point": -1.482317161,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 20,
                  "total_present": 1,
@@ -9839,7 +9839,7 @@
                  "dw_nominate": -0.394,
                  "ideal_point": -1.103256659,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 3,
                  "total_present": 1,
@@ -9885,7 +9885,7 @@
                  "dw_nominate": -0.307,
                  "ideal_point": -0.748348146,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 1,
@@ -10115,7 +10115,7 @@
                  "dw_nominate": 0.268,
                  "ideal_point": 0.703906803,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 10,
                  "total_present": 0,
@@ -10161,7 +10161,7 @@
                  "dw_nominate": -0.161,
                  "ideal_point": -0.504265718,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 89,
                  "total_present": 1,
@@ -10253,7 +10253,7 @@
                  "dw_nominate": -0.254,
                  "ideal_point": -0.809751913,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 13,
                  "total_present": 1,
@@ -10299,7 +10299,7 @@
                  "dw_nominate": 0.732,
                  "ideal_point": 1.01983922,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 50,
                  "total_present": 1,
@@ -10345,7 +10345,7 @@
                  "dw_nominate": 0.55,
                  "ideal_point": 1.019916341,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 31,
                  "total_present": 0,
@@ -10529,7 +10529,7 @@
                  "dw_nominate": 0.572,
                  "ideal_point": 1.001228255,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 111,
                  "total_present": 0,
@@ -11081,7 +11081,7 @@
                  "dw_nominate": 0.555,
                  "ideal_point": 1.158600232,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 0,
                  "total_present": 0,
@@ -11127,7 +11127,7 @@
                  "dw_nominate": -0.448,
                  "ideal_point": -1.666583044,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 13,
                  "total_present": 1,
@@ -11357,7 +11357,7 @@
                  "dw_nominate": -0.314,
                  "ideal_point": -0.793332132,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 33,
                  "total_present": 1,
@@ -11495,7 +11495,7 @@
                  "dw_nominate": -0.19,
                  "ideal_point": -0.390161494,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 9,
                  "total_present": 1,
@@ -11541,7 +11541,7 @@
                  "dw_nominate": -0.235,
                  "ideal_point": -0.425065871,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 18,
                  "total_present": 0,
@@ -11679,7 +11679,7 @@
                  "dw_nominate": 0.352,
                  "ideal_point": 0.747434863,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 18,
                  "total_present": 0,
@@ -11771,7 +11771,7 @@
                  "dw_nominate": 0.658,
                  "ideal_point": 0.620188934,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 1,
                  "total_present": 1,
@@ -11909,7 +11909,7 @@
                  "dw_nominate": 0.393,
                  "ideal_point": 0.949135049,
                  "seniority": "2",
-                 
+
                  "total_votes": 582,
                  "missed_votes": 52,
                  "total_present": 0,
@@ -12415,7 +12415,7 @@
                  "dw_nominate": 0.288,
                  "ideal_point": 0.578341159,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 0,
                  "total_present": 0,
@@ -12553,7 +12553,7 @@
                  "dw_nominate": 0.623,
                  "ideal_point": 1.037083133,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 13,
                  "total_present": 0,
@@ -12599,7 +12599,7 @@
                  "dw_nominate": 0.22,
                  "ideal_point": 0.481339293,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 5,
                  "total_present": 2,
@@ -12691,7 +12691,7 @@
                  "dw_nominate": -0.381,
                  "ideal_point": -0.998330358,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 70,
                  "total_present": 0,
@@ -12737,7 +12737,7 @@
                  "dw_nominate": 0.562,
                  "ideal_point": 1.159997688,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 19,
                  "total_present": 0,
@@ -13151,7 +13151,7 @@
                  "dw_nominate": 0.506,
                  "ideal_point": 1.02799919,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 30,
                  "total_present": 0,
@@ -13197,7 +13197,7 @@
                  "dw_nominate": 0.75,
                  "ideal_point": 1.013356936,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 45,
                  "total_present": 1,
@@ -13289,7 +13289,7 @@
                  "dw_nominate": -0.186,
                  "ideal_point": -0.409694264,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 17,
                  "total_present": 1,
@@ -13473,7 +13473,7 @@
                  "dw_nominate": -0.437,
                  "ideal_point": -1.067452886,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 184,
                  "total_present": 3,
@@ -13565,7 +13565,7 @@
                  "dw_nominate": 0.397,
                  "ideal_point": 0.778166169,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 55,
                  "total_present": 0,
@@ -13611,7 +13611,7 @@
                  "dw_nominate": -0.374,
                  "ideal_point": -0.887738622,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 24,
                  "total_present": 1,
@@ -13657,7 +13657,7 @@
                  "dw_nominate": -0.427,
                  "ideal_point": null,
                  "seniority": "2",
-                 
+
                  "total_votes": 48,
                  "missed_votes": 1,
                  "total_present": 0,
@@ -13841,7 +13841,7 @@
                  "dw_nominate": 0.488,
                  "ideal_point": 0.9832568,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 278,
                  "total_present": 0,
@@ -13887,7 +13887,7 @@
                  "dw_nominate": -0.306,
                  "ideal_point": -0.968593817,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 3,
                  "total_present": 1,
@@ -14025,7 +14025,7 @@
                  "dw_nominate": 0.492,
                  "ideal_point": 1.057004918,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 68,
                  "total_present": 0,
@@ -14255,7 +14255,7 @@
                  "dw_nominate": -0.52,
                  "ideal_point": -1.293998914,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 38,
                  "total_present": 2,
@@ -14439,7 +14439,7 @@
                  "dw_nominate": 0.665,
                  "ideal_point": 1.155675906,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 9,
                  "total_present": 0,
@@ -14531,7 +14531,7 @@
                  "dw_nominate": -0.175,
                  "ideal_point": -0.454086342,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 13,
                  "total_present": 1,
@@ -14761,7 +14761,7 @@
                  "dw_nominate": 0.562,
                  "ideal_point": 1.143810135,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 46,
                  "total_present": 0,
@@ -14853,7 +14853,7 @@
                  "dw_nominate": -0.549,
                  "ideal_point": -2.081508638,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 7,
                  "total_present": 1,
@@ -14991,7 +14991,7 @@
                  "dw_nominate": 0.66,
                  "ideal_point": 1.239637903,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 79,
                  "total_present": 0,
@@ -15221,7 +15221,7 @@
                  "dw_nominate": 0.702,
                  "ideal_point": 0.969146518,
                  "seniority": "2",
-                 
+
                  "total_votes": 655,
                  "missed_votes": 62,
                  "total_present": 0,
@@ -15451,7 +15451,7 @@
                  "dw_nominate": 0.385,
                  "ideal_point": 0.821336581,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 7,
                  "total_present": 0,
@@ -15497,7 +15497,7 @@
                  "dw_nominate": 0.603,
                  "ideal_point": 1.135181027,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 4,
@@ -15543,7 +15543,7 @@
                  "dw_nominate": 0.575,
                  "ideal_point": 0.972154964,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 26,
                  "total_present": 0,
@@ -15589,7 +15589,7 @@
                  "dw_nominate": -0.477,
                  "ideal_point": -0.762045112,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 174,
                  "total_present": 1,
@@ -15635,7 +15635,7 @@
                  "dw_nominate": 0.405,
                  "ideal_point": 0.741743582,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 16,
                  "total_present": 0,
@@ -15957,7 +15957,7 @@
                  "dw_nominate": 0.598,
                  "ideal_point": 1.155908778,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 51,
                  "total_present": 0,
@@ -16141,7 +16141,7 @@
                  "dw_nominate": 0.529,
                  "ideal_point": 1.055521936,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 10,
                  "total_present": 0,
@@ -16187,7 +16187,7 @@
                  "dw_nominate": 0.494,
                  "ideal_point": 0.980929255,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 1,
                  "total_present": 0,
@@ -16325,7 +16325,7 @@
                  "dw_nominate": -0.239,
                  "ideal_point": -0.477622584,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 39,
                  "total_present": 1,
@@ -16371,7 +16371,7 @@
                  "dw_nominate": 0.222,
                  "ideal_point": 0.427360036,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 70,
                  "total_present": 0,
@@ -16647,7 +16647,7 @@
                  "dw_nominate": 0.673,
                  "ideal_point": 0.85544612,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 37,
                  "total_present": 0,
@@ -16785,7 +16785,7 @@
                  "dw_nominate": 0.697,
                  "ideal_point": 0.701051152,
                  "seniority": "2",
-                 
+
                  "total_votes": 1045,
                  "missed_votes": 15,
                  "total_present": 0,
@@ -17015,7 +17015,7 @@
                  "dw_nominate": -0.164,
                  "ideal_point": -0.550353982,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 23,
                  "total_present": 0,
@@ -17199,7 +17199,7 @@
                  "dw_nominate": 0.633,
                  "ideal_point": 1.188537935,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 35,
                  "total_present": 0,
@@ -17291,7 +17291,7 @@
                  "dw_nominate": 0.572,
                  "ideal_point": 1.070244541,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 17,
                  "total_present": 0,
@@ -17521,7 +17521,7 @@
                  "dw_nominate": -0.391,
                  "ideal_point": -0.728117338,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 30,
                  "total_present": 1,
@@ -17567,7 +17567,7 @@
                  "dw_nominate": -0.316,
                  "ideal_point": -0.972537055,
                  "seniority": "6",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 40,
                  "total_present": 1,
@@ -17797,7 +17797,7 @@
                  "dw_nominate": -0.108,
                  "ideal_point": -0.375054728,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 32,
                  "total_present": 0,
@@ -17935,7 +17935,7 @@
                  "dw_nominate": 0.61,
                  "ideal_point": 1.29445928,
                  "seniority": "2",
-                 
+
                  "total_votes": 995,
                  "missed_votes": 8,
                  "total_present": 0,
@@ -18165,7 +18165,7 @@
                  "dw_nominate": 0.56,
                  "ideal_point": 0.952509525,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 15,
                  "total_present": 0,
@@ -18257,7 +18257,7 @@
                  "dw_nominate": 0.52,
                  "ideal_point": 0.872511236,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 31,
                  "total_present": 0,
@@ -18303,7 +18303,7 @@
                  "dw_nominate": 0.299,
                  "ideal_point": 0.637779152,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 34,
                  "total_present": 0,
@@ -18349,7 +18349,7 @@
                  "dw_nominate": 0.899,
                  "ideal_point": 0.97340178,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 63,
                  "total_present": 1,
@@ -18441,7 +18441,7 @@
                  "dw_nominate": -0.365,
                  "ideal_point": -0.913109618,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 6,
                  "total_present": 1,
@@ -18487,7 +18487,7 @@
                  "dw_nominate": -0.464,
                  "ideal_point": -1.246752723,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 2,
                  "total_present": 1,
@@ -18671,7 +18671,7 @@
                  "dw_nominate": -0.396,
                  "ideal_point": -1.080154904,
                  "seniority": "16",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 18,
                  "total_present": 0,
@@ -18855,7 +18855,7 @@
                  "dw_nominate": 0.456,
                  "ideal_point": 0.674736252,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 33,
                  "total_present": 0,
@@ -18901,7 +18901,7 @@
                  "dw_nominate": -0.301,
                  "ideal_point": -0.924556586,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 7,
                  "total_present": 1,
@@ -19131,7 +19131,7 @@
                  "dw_nominate": 0.254,
                  "ideal_point": 0.55269364,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 6,
                  "total_present": 0,
@@ -19223,7 +19223,7 @@
                  "dw_nominate": -0.395,
                  "ideal_point": -0.92248648,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 23,
                  "total_present": 1,
@@ -19269,7 +19269,7 @@
                  "dw_nominate": -0.403,
                  "ideal_point": -0.919778495,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 1,
@@ -19315,7 +19315,7 @@
                  "dw_nominate": -0.311,
                  "ideal_point": -0.464741941,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 30,
                  "total_present": 1,
@@ -19453,7 +19453,7 @@
                  "dw_nominate": 0.476,
                  "ideal_point": 1.110056394,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 28,
                  "total_present": 0,
@@ -19591,7 +19591,7 @@
                  "dw_nominate": 0.446,
                  "ideal_point": 0.89090361,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 11,
                  "total_present": 0,
@@ -19867,7 +19867,7 @@
                  "dw_nominate": 0.708,
                  "ideal_point": 1.741918157,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 6,
                  "total_present": 0,
@@ -19913,7 +19913,7 @@
                  "dw_nominate": 0.483,
                  "ideal_point": 0.828902418,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 40,
                  "total_present": 0,
@@ -20005,7 +20005,7 @@
                  "dw_nominate": 0.573,
                  "ideal_point": 1.141888774,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 14,
                  "total_present": 0,
@@ -20143,7 +20143,7 @@
                  "dw_nominate": 0.603,
                  "ideal_point": 1.21602895,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 44,
                  "total_present": 0,
@@ -20189,7 +20189,7 @@
                  "dw_nominate": -0.474,
                  "ideal_point": -1.457812333,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 29,
                  "total_present": 1,
@@ -20373,7 +20373,7 @@
                  "dw_nominate": 0.347,
                  "ideal_point": 0.841037566,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 0,
                  "total_present": 0,
@@ -20419,7 +20419,7 @@
                  "dw_nominate": 0.649,
                  "ideal_point": 0.96850558,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 15,
                  "total_present": 0,
@@ -20511,7 +20511,7 @@
                  "dw_nominate": 0.561,
                  "ideal_point": 0.973538106,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 12,
                  "total_present": 0,
@@ -20557,7 +20557,7 @@
                  "dw_nominate": 0.699,
                  "ideal_point": 0.911739389,
                  "seniority": "2",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 9,
                  "total_present": 0,
@@ -20603,7 +20603,7 @@
                  "dw_nominate": 0.486,
                  "ideal_point": 0.914094856,
                  "seniority": "4",
-                 
+
                  "total_votes": 1192,
                  "missed_votes": 13,
                  "total_present": 0,
