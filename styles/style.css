@@ -1,0 +1,9 @@
+table {
+  widht: 80%;
+  margin: auto;
+}
+td {
+ padding-left: 3em;
+ padding-right: 3em;
+ text-align: center;
+}
