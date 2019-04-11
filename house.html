@@ -3,55 +3,68 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Senate Data</title>
+  <title>113° Congress | House Data</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="./styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="container">
-  <header>
+<body>
+  <div class="container">
+    <!-- Header -->
     <div class="row">
-      <div class="col-md-4"> <img src="./img/logo.png" class="img-responsive " alt="Definitivamente no corrupto"></div>
-      <div class="col-md-2 pull-right"><a href="emailto:info@tgif.com"><span class="glyphicon glyphicon-envelope"> info@tgif.com</span></a></div>
+      <div class="col-xs-12 col-md-4"> <img src="./img/logo.png" class="img-responsive" alt="Logo"></div>
+      <div class="hidden-xs col-md-8 text-right"><a href="emailto:info@tgif.com"><span class="glyphicon glyphicon-envelope icons"></span> info@tgif.net</a></div>
     </div>
-  </header>
-    <!-- Barra de Navegación -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li><a href="./index.html">Home</a></li>
-        <li class="dropdown active">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113
-            <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="./house.html">House</a></li>
-            <li><a href="./senate.html">Senators</a></li>
-          </ul>
-        </li>
-      </ul>
+    <!-- NavBar -->
+    <div class="row" id="menu-bar">
+      <div class="col-xs-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</span></a></li>
+              <li class="dropdown active">
+                <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Congress 113
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="./house.html">House</a></li>
+                  <li><a href="./senate.html">Senators</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
-  </nav>
-  <!--Table container-->
-  <div>
-    <h2>Congressmen</h2>
-    <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and
-      Senate
-      re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the
-      U.S. President in case there is no majority in the Electoral College.</p>
-    <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
-    <table class="table" id="house-data">
-
-    </table>
+    <!--Congress Text-->
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Congressmen</h2>
+        <p class="text-justify">The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and
+          Senate
+          re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect
+          the
+          U.S. President in case there is no majority in the Electoral College.</p>
+        <p class="text-justify">Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+      </div>
+    </div>
+    <!--Congress Table  -->
+    <div class="row">
+      <div class="col-xs-12">
+<div class="table-responsive">
+  <table class="table table-hover" id="house-data">
+  </table>
+</div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="text-center well">© 2016 TGIF | All rights reserved.</p>
+      </div>
+    </div>
   </div>
-  <!-- Footer -->
-  <footer class="navbar navbar-default">
-    <div class="container  mx-auto" style="width:30%;">
-      <p class="navbar-text">© 2016 TGIF | All rights reserved.
-      </p>
-    </div>
-  </footer>
   <!-- Links JavaScript -->
   <script src="js/house-113.js"></script>
   <script src="js/house.js"></script>
