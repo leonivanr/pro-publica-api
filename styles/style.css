@@ -1,9 +1,11 @@
-table {
-  widht: 80%;
-  margin: auto;
+body {
+  margin-top: 2em;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
 }
-td {
- padding-left: 3em;
- padding-right: 3em;
- text-align: center;
+#menu-bar {
+  margin-top: 1em;
+}
+table{
+  margin-top: 1em;
 }

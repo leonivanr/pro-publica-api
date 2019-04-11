@@ -5,50 +5,70 @@
   <meta charset="utf-8">
   <title>Senate Data</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 
-<body class="container">
-  <!-- Barra de Navegación -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li><a href="./index.html">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113
-            <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="./house.html">House</a></li>
-            <li><a class="active" href="./senate.html">Senators</a></li>
-          </ul>
-        </li>
-      </ul>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="row">
+      <div class="col-xs-12 col-md-4"> <img src="./img/logo.png" class="img-responsive " alt="Logo"></div>
+      <div class="hidden-xs col-md-8 text-right"><a href="emailto:info@tgif.com"><span class="glyphicon glyphicon-envelope icons"></span> info@tgif.net</a></div>
     </div>
-  </nav>
-  <!-- Header -->
-  <header>
-    <div>
-    </div>
-  </header>
-  <!--Senate RAW Data-->
-  <table class="table" id="senate-data">
-  </table>
-  <!-- Footer -->
-  <footer class="navbar navbar-default">
-      <div class="container">
-        <p class="text-center navbar-text">© 2016 TGIF | All rights reserved.
-        </p>
+    <!-- Nav-bar -->
+    <div class="row" id="menu-bar">
+      <div class="col-xs-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="./index.html">Home</span></a></li>
+              <li class="dropdown active">
+                <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Congress 113
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="./house.html">House</a></li>
+                  <li><a href="./senate.html">Senators</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-  </footer>
-  <!-- Footer -->
-  <!-- Links JavaScript -->
-  <script src="js/senate-113.js"></script>
-  <script src="js/main.js"></script>
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </div>
+    <!-- Senate Text-->
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Senators</h2>
+        <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate
+          has
+          several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive
+          officials,
+          military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+      </div>
+    </div>
+    <!--Senate Table  -->
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <table class="table" id="senate-data">
+        </table>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="text-center well">© 2016 TGIF | All rights reserved.</p>
+      </div>
+    </div>
+    <!-- Links JavaScript -->
+    <script src="js/senate-113.js"></script>
+    <script src="js/senate.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </div>
 </body>
 
 </html>
