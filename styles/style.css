@@ -6,6 +6,16 @@ body {
 #menu-bar {
   margin-top: 1em;
 }
-table{
+.filters {
+  display: inline-block;
+  float: none;
+}
+label {
+  margin-bottom: 2px;
+}
+.checkbox-inline>label {
+  font-weight: lighter;
+}
+.row>.well {
   margin-top: 1em;
 }

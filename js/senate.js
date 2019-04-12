@@ -1,5 +1,3 @@
-// // .stringify(valoraconvertir, selector/filtro, cantidad de espacios)
-// var preElement = document.getElementById("senate-data").innerHTML = JSON.stringify(dataSenate,null,1);
 
 createSenateTable();
 
@@ -36,3 +34,20 @@ function addTableToHTML(membersArray) {
 
   return elementHtml;
 }
+
+function addStates (arrayStates) {
+  var states = Array.from(document.querySelectorAll('input[name=party-check]:checked')).map(elt => elt.value)
+}
+
+
+function addToDropDown(state){
+    var elDropDownStates = document.getElementById('select-states');
+    var elOption = document.createElement('OPTION');
+
+    if (elDropDownStates.getElementsByClassName(state).length == 0) {
+        elOption.className = state;
+        elOption.nodeValue = state;
+        elOption.textContent = state;
+        elDropDownStates.appendChild(elOption)
+    }
+};

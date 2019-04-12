@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- head -->
 
 <head>
   <meta charset="utf-8">
@@ -9,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<!-- body -->
 
 <body>
   <div class="container">
@@ -41,20 +43,105 @@
     <div class="row">
       <div class="col-xs-12">
         <h2>Senators</h2>
-        <p class="text-justify">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate
+        <p class="text-justify">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered
+          six-year terms. The Senate
           has
           several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive
           officials,
           military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
       </div>
     </div>
+    <!-- Filtros -->
+    <div class="row row-no-gutters">
+      <div class="well well-sm">
+
+        <!-- Checkbox -->
+        <div class="col-xs-12 col-md-2 filters text-center">
+          <label>Party Affiliation: </label>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <div class="checkbox-inline">
+            <label><input type="checkbox" checked="checked" name="party-check"value="democrat">Democrat</label>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <div class="checkbox-inline">
+            <label><input type="checkbox" checked="checked" name="party-check" value="republican">Republican</label>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <div class="checkbox-inline">
+            <label><input type="checkbox" checked="checked" name="party-check" value="independent">Independent</label>
+          </div>
+        </div>
+        <!-- Dropdown -->
+        <div class="col-xs-12 col-md-1 filters text-center">
+          <label>State:</label>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <select class="form-control">
+            <option value="All" selected="selected">--  All States --</option>
+            <option value="AK">AK</option>
+            <option value="AL">AL</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="IA">IA</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="MA">MA</option>
+            <option value="MD">MD</option>
+            <option value="ME">ME</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MO">MO</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="NE">NE</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NV">NV</option>
+            <option value="NY">NY</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VA">VA</option>
+            <option value="VT">VT</option>
+            <option value="WA">WA</option>
+            <option value="WI">WI</option>
+            <option value="WV">WV</option>
+            <option value="WY">WY</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <!--Senate Table  -->
     <div class="row">
       <div class="col-xs-12 col-md-12">
-<div class="table-responsive">
-  <table class="table table-hover" id="senate-data">
-  </table>
-</div>
+        <div class="table-responsive">
+          <table class="table table-hover" id="senate-data">
+          </table>
+        </div>
       </div>
     </div>
     <!-- Footer -->
