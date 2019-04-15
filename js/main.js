@@ -25561,6 +25561,7 @@ var dataHouse =
 
 var arraySenate = dataSenate.results[0].members;
 var arrayHouse = dataHouse.results[0].members;
+var filters = [];
 verifyPage();
 
 
@@ -25607,5 +25608,25 @@ function addTableToHTML(membersArray) {
     elementHtml += '</tbody>';
 
     return elementHtml;
+}
+
+// Checkboxes filters.
+document.getElementById("check-democrat").addEventListener("change", updateDemocrat);
+document.getElementById("check-republican").addEventListener("change", updateRepublican);
+document.getElementById("check-independent").addEventListener("change", updateIndependent);
+
+
+
+function updateDemocrat() {
+  var value = document.getElementById("check-democrat").getAttribute("value");
+ alert(value)
+}
+function updateRepublican() {
+  var value = document.getElementById("check-republican").getAttribute("value");
+ alert(value)
+}
+function updateIndependent() {
+  var value = document.getElementById("check-independent").getAttribute("value");
+ alert(value)
 }
 
