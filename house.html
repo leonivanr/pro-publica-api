@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Header -->
+
 <head>
   <meta charset="utf-8">
   <title>113° Congress | House Data</title>
@@ -10,12 +11,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <!-- Body -->
+
 <body>
   <div class="container">
     <!-- Header -->
     <div class="row">
       <div class="col-xs-12 col-md-4"> <img src="./img/logo.png" class="img-responsive" alt="Logo"></div>
-      <div class="hidden-xs col-md-8 text-right"><a href="emailto:info@tgif.com"><span class="glyphicon glyphicon-envelope icons"></span> info@tgif.net</a></div>
+      <div class="hidden-xs col-md-8 text-right"><a href="emailto:info@tgif.com"><span
+            class="glyphicon glyphicon-envelope icons"></span> info@tgif.net</a></div>
     </div>
     <!-- NavBar -->
     <div class="row" id="menu-bar">
@@ -37,25 +40,68 @@
         </nav>
       </div>
     </div>
+
     <!--Congress Text-->
     <div class="row">
       <div class="col-xs-12">
         <h2>Congressmen</h2>
-        <p class="text-justify">The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and
+        <p class="text-justify">The major power of the House is to pass federal legislation that affects the entire
+          country, although its bills must also be passed by the Senate and further agreed to by the U.S. President
+          before becoming law (unless both the House and
           Senate
-          re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect
+          re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the
+          power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the
+          Senate), and to elect
           the
           U.S. President in case there is no majority in the Electoral College.</p>
-        <p class="text-justify">Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+        <p class="text-justify">Each U.S. state is represented in the House in proportion to its population as measured
+          in the census, but every state is entitled to at least one representative. </p>
+      </div>
+    </div>
+    <!-- Filtros -->
+    <div class="row row-no-gutters">
+      <div class="well well-sm">
+
+        <!-- Checkbox -->
+        <div class="col-xs-12 col-md-2 filters text-center">
+          <label>Party Affiliation:</label>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <div class="checkbox-inline">
+            <label><input id="check-democrat" type="checkbox" checked="checked" name="party-check"
+                value="D" onclick="verifyPage()">Democrat</label>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <div class="checkbox-inline">
+            <label><input id="check-republican" type="checkbox" checked="checked" name="party-check"
+                value="R" onclick="verifyPage()">Republican</label>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <div class="checkbox-inline">
+            <label><input id="check-independent" type="checkbox" checked="checked" name="party-check"
+                value="I" onclick="verifyPage()">Independent</label>
+          </div>
+        </div>
+        <!-- Dropdown -->
+        <div class="col-xs-12 col-md-1 filters text-center">
+          <label>State:</label>
+        </div>
+        <div class="col-xs-12 col-md-2 filters">
+          <select id="select-states" class="form-control">
+            <option value="All">All States</option>
+          </select>
+        </div>
       </div>
     </div>
     <!--Congress Table  -->
     <div class="row">
       <div class="col-xs-12">
-<div class="table-responsive">
-  <table class="table table-hover" id="house-table">
-  </table>
-</div>
+        <div class="table-responsive">
+          <table class="table table-hover" id="house-table">
+          </table>
+        </div>
       </div>
     </div>
     <!-- Footer -->
@@ -66,8 +112,8 @@
     </div>
   </div>
   <!-- Links JavaScript -->
+  <script src="js/senate-113.js"></script>
   <script src="js/house-113.js"></script>
-
   <script src="js/main.js"></script>
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
