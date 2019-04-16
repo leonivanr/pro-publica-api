@@ -37,7 +37,6 @@ function addTableToHTML(membersArray) {
     }
     elementHtml += '<td>' + member.party + '</td>';
     elementHtml += '<td>' + member.state + '</td>';
-    addToDropDown(member.state);
     elementHtml += '<td>' + member.seniority + '</td>';
     elementHtml += '<td>' + member.votes_with_party_pct + ' % </td>';
     elementHtml += '</tr>';
@@ -46,44 +45,34 @@ function addTableToHTML(membersArray) {
 
   return elementHtml;
 }
-// Añade todos los estados al menú desplegable.
-function addToDropDown(state) {
-  // Selecciono el menú desplegable y lo pongo en una variable.
-  var elDropDownStates = document.getElementById('select-states');
-  // Crea un elemento cada vez que se lo llame.
-  var elOption = document.createElement('option');
-  // Si el nombre de la clase es 0 (está vacío), entonces:
-  if (elDropDownStates.getElementsByClassName(state).length == 0) {
-    // Le pongo como clase, el nombre del estado
-    elOption.className = state;
-    // Le pongo como valor, el nombre del estado
-    elOption.nodeValue = state;
-    // Le pongo como contenido de la etiqueta, el nombre del estado
-    elOption.textContent = state;
-    //Creo una etiqueta <option> para cada state.
-    elDropDownStates.appendChild(elOption)
-  }
-};
 // Filtra el array de miembros de acuerdo a los 3 checkboxes y el menú desplegable.
 function filterTable(members) {
+
   var filters = [];
+  //Obtengo el item seleccionado del menú desplegable de estados.
+  var selectedState = document.getElementById("select-states").value;
+
   for (var i = 0; i < members.length; i++) {
     memberState = members[i].state;
-    if ((document.getElementById("check-republican").checked === true)) {
+    // Si el checkbox da verdadero, comprueba si hay algún estado seleccionado y la compara, después copia el elemento
+    // en el array "filters".
+
+    if ((selectedState === "All" || selectedState === memberState) && (document.getElementById("check-republican").checked === true)) {
       if (members[i].party == "R") {
         filters.push(members[i]);
       }
     }
-    if ((document.getElementById("check-democrat").checked === true)) {
+    if ((selectedState === "All" || selectedState === memberState) && (document.getElementById("check-democrat").checked === true)) {
       if (members[i].party == "D") {
         filters.push(members[i]);
       }
     }
-    if ((document.getElementById("check-independent").checked === true)) {
+    if ((selectedState === "All" || selectedState === memberState) && (document.getElementById("check-independent").checked === true)) {
       if (members[i].party == "I") {
         filters.push(members[i]);
       }
     }
   }
   return filters;
+
 }
