@@ -1,10 +1,9 @@
-
 verifyPage();
 
 // Verifica si es Senadores o Congreso, en base a eso, llama a la función createTable con sus respectivos datos.
 function verifyPage() {
-  var idTable = document.getElementById("senate-table");
-  if (idTable) {
+
+  if (document.getElementById("senate-table")) {
     createTable("senate-table", filterTable(dataSenate.results[0].members));
   } else {
     createTable("house-table", filterTable(dataHouse.results[0].members));
@@ -56,22 +55,22 @@ function filterTable(members) {
     memberState = members[i].state;
     // Si el checkbox da verdadero, comprueba si hay algún estado seleccionado y la compara, después copia el elemento
     // en el array "filters".
-
+    if ((selectedState === "All" || selectedState === memberState) && (document.getElementById("check-independent").checked === true)) {
+      if (members[i].party === "I") {
+        filters.push(members[i]);
+      }
+    }
     if ((selectedState === "All" || selectedState === memberState) && (document.getElementById("check-republican").checked === true)) {
-      if (members[i].party == "R") {
+      if (members[i].party === "R") {
         filters.push(members[i]);
       }
     }
     if ((selectedState === "All" || selectedState === memberState) && (document.getElementById("check-democrat").checked === true)) {
-      if (members[i].party == "D") {
+      if (members[i].party === "D") {
         filters.push(members[i]);
       }
     }
-    if ((selectedState === "All" || selectedState === memberState) && (document.getElementById("check-independent").checked === true)) {
-      if (members[i].party == "I") {
-        filters.push(members[i]);
-      }
-    }
+
   }
   return filters;
 
