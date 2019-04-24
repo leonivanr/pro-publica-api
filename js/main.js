@@ -1,5 +1,9 @@
 verifyPage();
 
+countMembers(dataSenate.results[0].members);
+countMembers(dataSenate.results[0].members);
+
+
 // Verifica si es Senadores o Congreso, en base a eso, llama a la función createTable con sus respectivos datos.
 function verifyPage() {
   var idTable = document.getElementById("senate-table");
@@ -74,3 +78,25 @@ function filterTable(members) {
   return filters;
 
 }
+//Obtengo la cantidad de representantes por cada partido
+function countMembers(members) {
+  var countedMembers = [];
+
+   for (var i = 0; i < members.length; i++) {
+
+      if (members[i].party == "R") {
+        countedMembers.push(members[i]);
+      }
+    
+      if (members[i].party == "D") {
+        countedMembers.push(members[i]);
+      }
+    
+      if (members[i].party == "I") {
+        countedMembers.push(members[i]);
+      }
+    }
+      return countedMembers;
+  }
+
+
