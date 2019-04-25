@@ -87,31 +87,31 @@
     <div class="container">
       <div class="row">
         <!-- Checkbox -->
-        <div class="card bg-light col-md-12 py-1">
+        <div id="checkboxes" class="card bg-light col-md-12 py-1">
           <div class="row no-gutters">
             <label class="col-md-2 my-auto font-weight-bold">Party Affiliation:</label>
             <div class="col-md-2 my-auto">
               <div class="form-check-inline">
                 <label class="form-check-label"><input id="check-democrat" class="form-check-input" type="checkbox"
-                    checked="checked" value="D" onclick="verifyPage()">Democrat</label>
+                    checked="checked" value="D">Democrat</label>
               </div>
             </div>
             <div class="col-md-2 my-auto">
               <div class="form-check-inline">
                 <label class="form-check-label"><input id="check-republican" class="form-check-input" type="checkbox"
-                    checked="checked" value="R" onclick="verifyPage()">Republican</label>
+                    checked="checked" value="R">Republican</label>
               </div>
             </div>
             <div class="col-md-2 my-auto">
               <div class="form-check-inline">
                 <label class="form-check-label"><input id="check-independent" class="form-check-input" type="checkbox"
-                    checked="checked" value="I" onclick="verifyPage()">Independent</label>
+                    checked="checked" value="I">Independent</label>
               </div>
             </div>
             <!-- Drop -->
             <label class="col-md-1 my-auto font-weight-bold">State:</label>
             <div class="col-md-2 mx-auto">
-              <select id="select-states" class="form-control" onchange="verifyPage()">
+              <select id="select-states" class="form-control">
                 <option value="All">All States</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>

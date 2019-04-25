@@ -1,8 +1,9 @@
+//Crea por primera vez la tabla sin filtros.
 verifyPage();
-
-countMembers(dataSenate.results[0].members);
-countMembers(dataSenate.results[0].members);
-
+// Cuando cambia el estado de los checkboxes o del menú, renueva la tabla con los filtros.
+document.getElementById("checkboxes").addEventListener("change", function () {
+  verifyPage();
+});;
 
 // Verifica si es Senadores o Congreso, en base a eso, llama a la función createTable con sus respectivos datos.
 function verifyPage() {
@@ -48,7 +49,7 @@ function addTableToHTML(membersArray) {
   return elementHtml;
 }
 // Filtra el array de miembros de acuerdo a los 3 checkboxes y el menú desplegable.
-function filterTable(members) {
+/* function filterTable(members) {
 
   var filters = [];
   //Obtengo el item seleccionado del menú desplegable de estados.
@@ -77,26 +78,24 @@ function filterTable(members) {
   }
   return filters;
 
+} */
+
+function filterTable(array) {
+
+  let stateSelect = document.getElementById("select-states").value;
+  let checkeds = Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(element => element.value);
+  let items = [];
+  let aux = [];
+
+  checkeds.forEach(element => {
+    aux = [];
+    aux = array.filter(item => item.party === element && (item.state === stateSelect || stateSelect === "All"));
+    items.push.apply(items, aux);
+  })
+   /*   for (var i = 0; i < items.length; i++) {
+      if (items[i].state == stateSelect || stateSelect == "All") {
+        final.push(items[i])
+      };
+    } */
+  return items;
 }
-//Obtengo la cantidad de representantes por cada partido
-function countMembers(members) {
-  var countedMembers = [];
-
-   for (var i = 0; i < members.length; i++) {
-
-      if (members[i].party == "R") {
-        countedMembers.push(members[i]);
-      }
-    
-      if (members[i].party == "D") {
-        countedMembers.push(members[i]);
-      }
-    
-      if (members[i].party == "I") {
-        countedMembers.push(members[i]);
-      }
-    }
-      return countedMembers;
-  }
-
-
