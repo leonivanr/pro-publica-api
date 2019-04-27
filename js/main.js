@@ -1,8 +1,6 @@
 var memberSenateArray = dataSenate.results[0].members;
 var memberHouseArray = dataHouse.results[0].members;
-var independent = "I";
-var democrat = "D";
-var republican = "R";
+
 //Crea por primera vez la tabla sin filtros.
 verifyPage();
 // Cuando cambia el estado de los checkboxes o del menú, renueva la tabla con los filtros.
@@ -104,18 +102,3 @@ function filterTable(array) {
   return items;
 }
 
-
-
-
-//Obtengo la cantidad de representantes por cada partido
-function countMembers(arrayM, partyChar) {
-  counted = arrayM.filter(e => e.party === partyChar);
-  return counted.length;
-
-}
-console.log(countMembers(memberSenateArray, republican));
-console.log(countMembers(memberSenateArray, independent));
-console.log(countMembers(memberSenateArray, democrat));
-console.log(countMembers(memberHouseArray, republican));
-console.log(countMembers(memberHouseArray, independent));
-console.log(countMembers(memberHouseArray, democrat));
