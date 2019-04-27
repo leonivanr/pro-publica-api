@@ -1,3 +1,8 @@
+var memberSenateArray = dataSenate.results[0].members;
+var memberHouseArray = dataHouse.results[0].members;
+var independent = "I";
+var democrat = "D";
+var republican = "R";
 //Crea por primera vez la tabla sin filtros.
 verifyPage();
 // Cuando cambia el estado de los checkboxes o del menú, renueva la tabla con los filtros.
@@ -7,11 +12,10 @@ document.getElementById("checkboxes").addEventListener("change", function () {
 
 // Verifica si es Senadores o Congreso, en base a eso, llama a la función createTable con sus respectivos datos.
 function verifyPage() {
-  var idTable = document.getElementById("senate-table");
-  if (idTable) {
-    createTable("senate-table", filterTable(dataSenate.results[0].members));
+  if (document.getElementById("senate-table")) {
+    createTable("senate-table", filterTable(memberSenateArray));
   } else {
-    createTable("house-table", filterTable(dataHouse.results[0].members));
+    createTable("house-table", filterTable(memberHouseArray));
   }
 }
 // Toma la tabla y la rellena con los campos tomados de la función addTableToHTML,
@@ -92,10 +96,26 @@ function filterTable(array) {
     aux = array.filter(item => item.party === element && (item.state === stateSelect || stateSelect === "All"));
     items.push.apply(items, aux);
   })
-   /*   for (var i = 0; i < items.length; i++) {
-      if (items[i].state == stateSelect || stateSelect == "All") {
-        final.push(items[i])
-      };
-    } */
+  /*   for (var i = 0; i < items.length; i++) {
+     if (items[i].state == stateSelect || stateSelect == "All") {
+       final.push(items[i])
+     };
+   } */
   return items;
 }
+
+
+
+
+//Obtengo la cantidad de representantes por cada partido
+function countMembers(arrayM, partyChar) {
+  counted = arrayM.filter(e => e.party === partyChar);
+  return counted.length;
+
+}
+console.log(countMembers(memberSenateArray, republican));
+console.log(countMembers(memberSenateArray, independent));
+console.log(countMembers(memberSenateArray, democrat));
+console.log(countMembers(memberHouseArray, republican));
+console.log(countMembers(memberHouseArray, independent));
+console.log(countMembers(memberHouseArray, democrat));
