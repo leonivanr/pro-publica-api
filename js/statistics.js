@@ -24,31 +24,25 @@ function averageVotesWithParty(arrayM, partyChar) {
     }
     return (countPercent / average).toFixed(2);
 }
-var estadisticas = [{
-        "congress": "senate",
-        "numberOfDemocrats": 0,
-        "numberOfIndependents": 0,
-        "numberOfRepublicans": 0,
-        "membersDemDoNotVoteWithParty": 0,
-        "membersIndDoNotVoteWithParty": 0,
-        "membersRepDoNotVoteWithParty": 0,
-        "membersVoteWithParty": 0,
-        "membersMissedMostVotes": 0,
-        "membersMissedLeastVotes": 0
+
+var estadisticas = {
+    "senate": {
+        "independent": [{
+            "totalmembers": 0,
+        }],
+        "democrats": [{
+            "totalmembers": 0,
+        }],
+        "republicans": [],
     },
-    {
-        "congress": "house",
-        "numberOfDemocrats": 0,
-        "numberOfIndependents": 0,
-        "numberOfRepublicans": 0,
-        "membersDemDoNotVoteWithParty": 0,
-        "membersIndDoNotVoteWithParty": 0,
-        "membersRepDoNotVoteWithParty": 0,
-        "membersVoteWithParty": 0,
-        "membersMissedMostVotes": 0,
-        "membersMissedLeastVotes": 0
-    }
-]
+    "house": {
+        "independent": [],
+        "democrats": [],
+        "republicans": [],
+    },
+
+}
+
 
 /* function fillStatisticsFields() {
     estadisticas[0].numberOfRepublicans = countMembers(memberSenateArray, republican);
@@ -82,3 +76,16 @@ for (let i = 0; i < estadisticas.length; i++) {
     console.log("Number of Republicans of " + obj.congress + ": " + obj.numberOfRepublicans);
     console.log("Average votes Republicans of " + obj.congress + ": " + obj.averageVotesWithParty);
 } */
+// console.table(lestVotes(memberHouseArray))
+function lestVotes(array) {
+    var aux = [];
+    var minLenght = function (array) {
+        ((array.length * 10) / 100).toPrecision(2);
+    }
+
+    return array;
+}
+
+
+
+

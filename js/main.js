@@ -1,6 +1,228 @@
 var memberSenateArray = dataSenate.results[0].members;
 var memberHouseArray = dataHouse.results[0].members;
-
+var estados = {
+  "nombres": [{
+      "letrasEstado": "AL",
+      "nombreCompleto": "Alabama"
+    },
+    {
+      "letrasEstado": "AK",
+      "nombreCompleto": "Alaska"
+    },
+    {
+      "letrasEstado": "AS",
+      "nombreCompleto": "American Samoa"
+    },
+    {
+      "letrasEstado": "AR",
+      "nombreCompleto": "Arkansas"
+    },
+    {
+      "letrasEstado": "AZ",
+      "nombreCompleto": "Arizona"
+    },
+    {
+      "letrasEstado": "CA",
+      "nombreCompleto": "California"
+    },
+    {
+      "letrasEstado": "CO",
+      "nombreCompleto": "Colorado"
+    },
+    {
+      "letrasEstado": "CT",
+      "nombreCompleto": "Connecticut"
+    },
+    {
+      "letrasEstado": "DE",
+      "nombreCompleto": "Delaware"
+    },
+    {
+      "letrasEstado": "FL",
+      "nombreCompleto": "Florida"
+    },
+    {
+      "letrasEstado": "GA",
+      "nombreCompleto": "Georgia"
+    },
+    {
+      "letrasEstado": "GU",
+      "nombreCompleto": "Guam"
+    },
+    {
+      "letrasEstado": "HI",
+      "nombreCompleto": "Hawaii"
+    },
+    {
+      "letrasEstado": "IA",
+      "nombreCompleto": "Iowa"
+    },
+    {
+      "letrasEstado": "ID",
+      "nombreCompleto": "Idaho"
+    },
+    {
+      "letrasEstado": "IL",
+      "nombreCompleto": "Illinois"
+    },
+    {
+      "letrasEstado": "IN",
+      "nombreCompleto": "Indiana"
+    },
+    {
+      "letrasEstado": "KS",
+      "nombreCompleto": "Kansas"
+    },
+    {
+      "letrasEstado": "KY",
+      "nombreCompleto": "Kentucky"
+    },
+    {
+      "letrasEstado": "LA",
+      "nombreCompleto": "Lousiana"
+    },
+    {
+      "letrasEstado": "MA",
+      "nombreCompleto": "Massachussets"
+    },
+    {
+      "letrasEstado": "MD",
+      "nombreCompleto": "Maryland"
+    },
+    {
+      "letrasEstado": "ME",
+      "nombreCompleto": "Maine"
+    },
+    {
+      "letrasEstado": "MI",
+      "nombreCompleto": "Michigan"
+    },
+    {
+      "letrasEstado": "MN",
+      "nombreCompleto": "Minnesota"
+    },
+    {
+      "letrasEstado": "MO",
+      "nombreCompleto": "Missouri"
+    },
+    {
+      "letrasEstado": "MP",
+      "nombreCompleto": "Northern Mariana Islands"
+    },
+    {
+      "letrasEstado": "MS",
+      "nombreCompleto": "Mississippi"
+    },
+    {
+      "letrasEstado": "MT",
+      "nombreCompleto": "Montana"
+    },
+    {
+      "letrasEstado": "NC",
+      "nombreCompleto": "North Carolina"
+    },
+    {
+      "letrasEstado": "ND",
+      "nombreCompleto": "North Dakota"
+    },
+    {
+      "letrasEstado": "NE",
+      "nombreCompleto": "Nebraska"
+    },
+    {
+      "letrasEstado": "NH",
+      "nombreCompleto": "New Hampshire"
+    },
+    {
+      "letrasEstado": "NJ",
+      "nombreCompleto": "New Jersey"
+    },
+    {
+      "letrasEstado": "NM",
+      "nombreCompleto": "New Mexico"
+    },
+    {
+      "letrasEstado": "NV",
+      "nombreCompleto": "Nevada"
+    },
+    {
+      "letrasEstado": "NY",
+      "nombreCompleto": "New York"
+    },
+    {
+      "letrasEstado": "OH",
+      "nombreCompleto": "Ohio"
+    },
+    {
+      "letrasEstado": "OK",
+      "nombreCompleto": "Oklahoma"
+    },
+    {
+      "letrasEstado": "OR",
+      "nombreCompleto": "Oregon"
+    },
+    {
+      "letrasEstado": "PA",
+      "nombreCompleto": "Pennsylvania"
+    },
+    {
+      "letrasEstado": "PR",
+      "nombreCompleto": "Puerto Rico"
+    },
+    {
+      "letrasEstado": "RI",
+      "nombreCompleto": "Rhode Island"
+    },
+    {
+      "letrasEstado": "SC",
+      "nombreCompleto": "South Carolina"
+    },
+    {
+      "letrasEstado": "SD",
+      "nombreCompleto": "South Dakota"
+    },
+    {
+      "letrasEstado": "TN",
+      "nombreCompleto": "Tennessee"
+    },
+    {
+      "letrasEstado": "TX",
+      "nombreCompleto": "Texas"
+    },
+    {
+      "letrasEstado": "UT",
+      "nombreCompleto": "Utah"
+    },
+    {
+      "letrasEstado": "VA",
+      "nombreCompleto": "Virginia"
+    },
+    {
+      "letrasEstado": "VI",
+      "nombreCompleto": "Virgin Islands"
+    },
+    {
+      "letrasEstado": "VT",
+      "nombreCompleto": "Vermont"
+    },
+    {
+      "letrasEstado": "WA",
+      "nombreCompleto": "Washington"
+    },
+    {
+      "letrasEstado": "WI",
+      "nombreCompleto": "Wisconsin"
+    },
+    {
+      "letrasEstado": "WV",
+      "nombreCompleto": "West Virginia"
+    },
+    {
+      "letrasEstado": "WY",
+      "nombreCompleto": "Wyoming"
+    },
+  ]
+}
 //Crea por primera vez la tabla sin filtros.
 verifyPage();
 // Cuando cambia el estado de los checkboxes o del menú, renueva la tabla con los filtros.
@@ -42,6 +264,7 @@ function addTableToHTML(membersArray) {
     }
     elementHtml += '<td>' + member.party + '</td>';
     elementHtml += '<td>' + member.state + '</td>';
+    addToDropDown(member.state);
     elementHtml += '<td>' + member.seniority + '</td>';
     elementHtml += '<td id="percent">' + member.votes_with_party_pct + ' % </td>';
     elementHtml += '</tr>';
@@ -94,11 +317,26 @@ function filterTable(array) {
     aux = array.filter(item => item.party === element && (item.state === stateSelect || stateSelect === "All"));
     items.push.apply(items, aux);
   })
-  /*   for (var i = 0; i < items.length; i++) {
-     if (items[i].state == stateSelect || stateSelect == "All") {
-       final.push(items[i])
-     };
-   } */
+
   return items;
 }
 
+function addToDropDown(state) {
+  var elDropDownStates = document.getElementById('select-states');
+  var elOption = document.createElement('OPTION');
+
+  if (elDropDownStates.getElementsByClassName(state).length == 0) {
+    elOption.className = state;
+    elOption.nodeValue = state;
+    elOption.textContent = compareStates(state);
+    elDropDownStates.appendChild(elOption)
+  }
+};
+
+function compareStates(stateName) {
+  for (let i = 0; i < estados.nombres.length; i++) {
+    if (stateName === estados.nombres[i].letrasEstado) {
+      return estados.nombres[i].nombreCompleto;
+    }
+  }
+}
