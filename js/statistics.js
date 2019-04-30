@@ -76,16 +76,16 @@ for (let i = 0; i < estadisticas.length; i++) {
     console.log("Number of Republicans of " + obj.congress + ": " + obj.numberOfRepublicans);
     console.log("Average votes Republicans of " + obj.congress + ": " + obj.averageVotesWithParty);
 } */
-// console.table(lestVotes(memberHouseArray))
+
+/* 
 function lestVotes(array) {
-    var aux = [];
-    var minLenght = function (array) {
-        ((array.length * 10) / 100).toPrecision(2);
+    var aux = [0];
+    var minLenght = Math.round((array.length * 10) / 100) //
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].votes_with_party_pct < ) {
+            
+        }  
     }
-
-    return array;
-}
-
-
-
-
+    
+    return minLenght;
+} */
