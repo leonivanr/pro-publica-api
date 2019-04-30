@@ -12,7 +12,7 @@ function countMembers(arrayM, partyChar) {
     counted = arrayM.filter(e => e.party === partyChar);
     return counted.length;
 }
-
+// Cantidad promedio de votantes con cada partido. 
 function averageVotesWithParty(arrayM, partyChar) {
     var average = 0;
     var countPercent = 0;
@@ -77,15 +77,23 @@ for (let i = 0; i < estadisticas.length; i++) {
     console.log("Average votes Republicans of " + obj.congress + ": " + obj.averageVotesWithParty);
 } */
 
-/* 
+
 function lestVotes(array) {
-    var aux = [0];
     var minLenght = Math.round((array.length * 10) / 100) //
-    for (let i = 0; i < array.length; i++) {
-        if (array[i].votes_with_party_pct < ) {
-            
-        }  
+    array.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0));
+    var aux = array.filter(members => aux.length < minLenght);
+    return aux;
+}
+
+
+// console.table(memberSenateArray.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0)));
+/* console.table(memberSenateArray.sort(compare)); */
+/* function compare(a, b) {
+    if (a.missed_votes < b.missed_votes) {
+        return -1;
     }
-    
-    return minLenght;
+    if (a.missed_votes > b.missed_votes) {
+        return 1;
+    }
+    return 0;
 } */

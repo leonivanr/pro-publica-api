@@ -231,6 +231,7 @@ document.getElementById("checkboxes").addEventListener("change", function () {
 
 // Verifica si es Senadores o Congreso, en base a eso, llama a la función createTable con sus respectivos datos.
 function verifyPage() {
+
   if (document.getElementById("senate-table")) {
     createTable("senate-table", filterTable(memberSenateArray));
   } else {
@@ -249,6 +250,7 @@ function createTable(id, data) {
 }
 // Recorre el array y crea el head y el body de la tabla.
 function addTableToHTML(membersArray) {
+  var auxStates = [];
   // Creo una variable que contenga las etiquetas con los titulos de cada columna de la tabla.
   var elementHtml = '<thead class="thead-light"><tr><th> Name </th><th> Party Affiliation</th><th> State </th><th> Seniority </th><th> Votes with party </th></tr></thead>';
   // Le agrego la etiqueta <tbody> al cuerpo de la tabla.
@@ -263,21 +265,21 @@ function addTableToHTML(membersArray) {
     }
     elementHtml += '<td>' + member.party + '</td>';
     elementHtml += '<td>' + member.state + '</td>';
-    addToDropDown(member.state);
+    popularDropdown(member.state);
     elementHtml += '<td>' + member.seniority + '</td>';
     elementHtml += '<td id="percent">' + member.votes_with_party_pct + ' % </td>';
     elementHtml += '</tr>';
   });
   elementHtml += '</tbody>';
-
   return elementHtml;
 }
-// Filtra el array de miembros de acuerdo a los 3 checkboxes y el menú desplegable.
-/* function filterTable(members) {
+/* // Filtra el array de miembros de acuerdo a los 3 checkboxes y el menú desplegable.
+
+function filterTable(members) {
 
   var filters = [];
   //Obtengo el item seleccionado del menú desplegable de estados.
-  var selectedState = document.getElementById("select-states").value;
+  var selectedState = compareSelectStates(document.getElementById("select-states").value);
 
   for (var i = 0; i < members.length; i++) {
     memberState = members[i].state;
@@ -303,7 +305,9 @@ function addTableToHTML(membersArray) {
   return filters;
 
 } */
-
+/*////////////////////////////////////////
+// Forma más simple y ordenada de filtrar.
+////////////////////////////////////////*/
 function filterTable(array) {
 
   let stateSelect = compareSelectStates(document.getElementById("select-states").value);
@@ -324,20 +328,21 @@ function filterTable(array) {
         Add states DropDown
 /////////////////////////////////*/
 
-function addToDropDown(state) {
+// TODO: Ordenar menu drop alfabeticamente.
+function popularDropdown(state) {
   var elDropDownStates = document.getElementById('select-states');
   var elOption = document.createElement('OPTION');
-
+  // Si el menú está vacío, crea una etiqueta option con los datos.
   if (elDropDownStates.getElementsByClassName(state).length == 0) {
-    elOption.className = state;
-    elOption.nodeValue = state;
-    elOption.textContent = compareStates(state);
-    elDropDownStates.appendChild(elOption)
-  }
+      elOption.className = state;
+      elOption.nodeValue = state; 
+      elOption.textContent = compareStates(state);
+      elDropDownStates.appendChild(elOption)
+    }
 };
-
+// Compara las siglas del estado seleccionado y devuelve el nombre completo.
 function compareStates(stateName) {
-  
+
   var states = estados.filter(letters => letters.letrasEstado === stateName);
   return states[0].nombreCompleto;
   // for (let i = 0; i < estados.nombres.length; i++) {
@@ -346,12 +351,15 @@ function compareStates(stateName) {
   //   }
   // }
 }
-
+// Compara el nombre completo y devuelve las siglas del estado seleccionado.
 function compareSelectStates(stateName) {
   var states = estados.filter(letters => letters.nombreCompleto === stateName);
   if (stateName === "All") {
     return "All";
   } else {
     return states[0].letrasEstado;
-  }
+  };
 }
+
+
+
