@@ -6,6 +6,13 @@ var memberHouseArray = dataHouse.results[0].members;
 var independent = "I";
 var democrat = "D";
 var republican = "R";
+var stadistics = {
+    "numberOfDemocrats": 0,
+    "numberOfIndependents": 0,
+    "numberOfRepublicans": 0,
+}
+// TODO Hacer con Democrats
+// TODO Hacer con Republicans
 
 //Obtengo la cantidad de representantes por cada partido
 function countMembers(arrayM, partyChar) {
@@ -24,24 +31,80 @@ function averageVotesWithParty(arrayM, partyChar) {
     }
     return (countPercent / average).toFixed(2);
 }
-
-var estadisticas = {
-    "senate": {
-        "independent": [{
-            "totalmembers": 0,
-        }],
-        "democrats": [{
-            "totalmembers": 0,
-        }],
-        "republicans": [],
-    },
-    "house": {
-        "independent": [],
-        "democrats": [],
-        "republicans": [],
-    },
-
+// Lleno las estadisticas.
+function fillStatisticsFields() {
+    estadisticas.numberOfRepublicans = countMembers(memberSenateArray, republican);
+    estadisticas.numberOfIndependents = countMembers(memberSenateArray, independent);
+    estadisticas.numberOfDemocrats = countMembers(memberSenateArray, democrat);
 }
+
+function fillTable(params) {
+    var mytable1 = "<thead class='thead-light'><tr><th> Party </th><th> Votes </th><th> Percent </th></tr></thead>";
+    mytable1 += "<tbody>";
+    mytable1 += "<tr><td>Democrat</td><td>" + 15 + "</td><td>" + 12 + " % </td></tr>";
+    mytable1 += "<tr><td>Republican</td><td>" + 16 + "</td><td>" + 13 + " % </td></tr>";
+    mytable1 += "<tr><td>Independent</td><td>" + 17 + "</td><td>" + 14 + " %</td></tr>";
+    mytable1 += "</tbody>";
+    mytable1 += "<tr><td class='font-weight-bold'>Total</td><td>" + 75 + "</td><td>" + 8 + " %</td></tr>";
+    mytable1 += "</tbody>";
+    document.getElementById('total-members').innerHTML = mytable1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* function fillStatisticsFields() {
@@ -57,33 +120,9 @@ var estadisticas = {
     estadisticas[1].membersRepDoNotVoteWithParty = averageVotesWithParty(memberHouseArray, republican);
     estadisticas[1].membersIndDoNotVoteWithParty = averageVotesWithParty(memberHouseArray, independent);
     estadisticas[1].membersDemDoNotVoteWithParty = averageVotesWithParty(memberHouseArray, democrat);
-}
-
-fillStatisticsFields();
-
-for (let i = 0; i < estadisticas.length; i++) {
-    var obj = estadisticas[i];
-    console.log("Number of Democrats of " + obj.congress + ": " + obj.numberOfDemocrats);
-    console.log("Average votes Dem of " + obj.congress + ": " + obj.averageVotesWithParty);
-}
-for (let i = 0; i < estadisticas.length; i++) {
-    var obj = estadisticas[i];
-    console.log("Number of Independents of " + obj.congress + ": " + obj.numberOfIndependents);
-    console.log("Average votes Independents of " + obj.congress + ": " + obj.averageVotesWithParty);
-}
-for (let i = 0; i < estadisticas.length; i++) {
-    var obj = estadisticas[i];
-    console.log("Number of Republicans of " + obj.congress + ": " + obj.numberOfRepublicans);
-    console.log("Average votes Republicans of " + obj.congress + ": " + obj.averageVotesWithParty);
 } */
 
 
-function lestVotes(array) {
-    var minLenght = Math.round((array.length * 10) / 100) //
-    array.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0));
-    var aux = array.filter(members => aux.length < minLenght);
-    return aux;
-}
 
 
 // console.table(memberSenateArray.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0)));
