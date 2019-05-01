@@ -31,6 +31,7 @@ function averageVotesWithParty(arrayM, partyChar) {
     }
     return (countPercent / average).toFixed(2);
 }
+
 // Lleno las estadisticas.
 function fillStatisticsFields() {
     estadisticas.numberOfRepublicans = countMembers(memberSenateArray, republican);
@@ -51,7 +52,12 @@ function fillTable(params) {
 }
 
 
-
+function lestVotes(array) {
+    var minLenght = Math.round((array.length * 10) / 100) //
+    array.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0));
+    var aux = array.filter(members => aux.length < minLenght);
+    return aux;
+}
 
 
 
