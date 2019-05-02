@@ -1,11 +1,17 @@
 /* ////////////////////////////////////////////////
                 ESTADISTICAS
 //////////////////////////////////////////////// */
+
+
 var memberSenateArray = dataSenate.results[0].members;
 var memberHouseArray = dataHouse.results[0].members;
 var independent = "I";
 var democrat = "D";
 var republican = "R";
+var missed = "missed";
+var total = "total";
+var least = "least";
+var most = "most";
 var stadistics = {
     "senate": [{
         "democrats": {
@@ -23,7 +29,7 @@ var stadistics = {
         "totalMembersAllParties": 0,
         "averageVotesAllParties": 0,
         "mostEngaged": 0,
-        "leastEngaged":0,
+        "leastEngaged": 0,
         "mostLoyal": 0,
         "leastLoyal": 0
     }],
@@ -43,7 +49,7 @@ var stadistics = {
         "totalMembersAllParties": 0,
         "averageVotesAllParties": 0,
         "mostEngaged": 0,
-        "leastEngaged":0,
+        "leastEngaged": 0,
         "mostLoyal": 0,
         "leastLoyal": 0
     }],
@@ -58,73 +64,68 @@ function countMembers(arrayM, partyChar) {
 }
 // Cantidad promedio de votantes con cada partido. 
 function averageVotesWithParty(arrayM, partyChar) {
-    var average = 0;
+    var dividerLength = 0;
     var countPercent = 0;
+    var average = 0;
     for (let i = 0; i < arrayM.length; i++) {
         if (arrayM[i].party === partyChar) {
             countPercent += arrayM[i].votes_with_party_pct;
-            average++
+            dividerLength++
         }
     }
-    return (countPercent / average).toFixed(2);
+    average = (countPercent / dividerLength).toFixed(2)
+    return average;
 }
-// Votos menos perdidos por partido. 
-function lestVotes(array) {
-    var minLenght = Math.round((array.length * 10) / 100) //
-    array.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0));
-    var aux = [];
-    for (let i = 0; aux.length < minLenght; i++) {
-        aux.push(array[i]);
-    }
-    return aux;
-}
-// Votos más por partido. 
-function mostMissedVotes(array) {
-    var minLenght = Math.round((array.length * 10) / 100) //
-    array.sort((a, b) => (a.missed_votes < b.missed_votes) ? 1 : ((b.missed_votes < a.missed_votes) ? -1 : 0));
-    var aux = [];
-    for (let i = 0; aux.length < minLenght; i++) {
-        aux.push(array[i]);
-    }
-    return aux;
-}
-// 
-function lestLoyalVotes(array) {
-    var minLenght = Math.round((array.length * 10) / 100) //
-    array.sort((a, b) => (a.total_votes > b.total_votes) ? 1 : ((b.total_votes > a.total_votes) ? -1 : 0));
-    var aux = [];
-    for (let i = 0; aux.length < minLenght; i++) {
-        aux.push(array[i]);
-    }
-    return aux;
-}
-// Votos más por partido. 
-function mostLoyalVotes(array) {
-    var minLenght = Math.round((array.length * 10) / 100) //
-    array.sort((a, b) => (a.total_votes < b.total_votes) ? 1 : ((b.total_votes < a.total_votes) ? -1 : 0));
-    var aux = [];
-    for (let i = 0; aux.length < minLenght; i++) {
-        aux.push(array[i]);
-    }
-    return aux;
-}
-/* console.log("Most loyal votes Senate: " + mostLoyalVotes(memberSenateArray).length);
-console.table(mostLoyalVotes(memberSenateArray));
-console.log("Most loyal votes House: " + mostLoyalVotes(memberHouseArray).length);
-console.table(mostLoyalVotes(memberHouseArray));
-console.log("Least loyal votes Senate: " + mostLoyalVotes(memberSenateArray).length);
-console.table(mostLoyalVotes(memberSenateArray));
-console.log("Least loyal votes House: " + mostLoyalVotes(memberHouseArray).length);
-console.table(mostLoyalVotes(memberHouseArray));
 
- */
-
+function mostLeast(arrayM, leastOrMost, missedOrTotal) {
+    var minLenght = Math.round((arrayM.length * 10) / 100) //
+    var aux = [];
+    if (leastOrMost === "least") {
+        if (missedOrTotal === "missed") {
+            arrayM.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0));
+            for (let i = 0; aux.length < minLenght; i++) {
+                aux.push(arrayM[i]);
+            }
+            return aux;
+        } else if (missedOrTotal === "total") {
+            arrayM.sort((a, b) => (a.total_votes > b.total_votes) ? 1 : ((b.total_votes > a.total_votes) ? -1 : 0));
+            for (let i = 0; aux.length < minLenght; i++) {
+                aux.push(arrayM[i]);
+            }
+            return aux;
+        }
+    }
+    if (leastOrMost === "most") {
+        if (missedOrTotal === "missed") {
+            arrayM.sort((a, b) => (a.missed_votes < b.missed_votes) ? 1 : ((b.missed_votes < a.missed_votes) ? -1 : 0));
+            for (let i = 0; aux.length < minLenght; i++) {
+                aux.push(arrayM[i]);
+            }
+            return aux;
+        } else if (missedOrTotal === "total") {
+            arrayM.sort((a, b) => (a.total_votes < b.total_votes) ? 1 : ((b.total_votes < a.total_votes) ? -1 : 0));
+            for (let i = 0; aux.length < minLenght; i++) {
+                aux.push(arrayM[i]);
+            }
+            return aux;
+        }
+}
+}
 // Lleno las estadisticas.
-function fillStatisticsFields() {
-    estadisticas.numberOfRepublicans = countMembers(memberSenateArray, republican);
-    estadisticas.numberOfIndependents = countMembers(memberSenateArray, independent);
-    estadisticas.numberOfDemocrats = countMembers(memberSenateArray, democrat);
-}
+/* function fillStatisticsFields() {
+    stadistics.senate[0].democrats.numberOfMembers = countMembers(memberSenateArray, democrat);
+    stadistics.senate[0].democrats.averageVotesWithParty = averageVotesWithParty(membersenate, democrat);
+    stadistics.senate[0].republicans.numberOfMembers = countMembers(memberSenateArray, republican);
+    stadistics.senate[0].republicans.averageVotesWithParty = averageVotesWithParty(membersenate, republican);
+    stadistics.senate[0].independents.numberOfMembers = countMembers(memberSenateArray, independent);
+    stadistics.senate[0].independents.averageVotesWithParty = averageVotesWithParty(membersenate, independent);
+    stadistics.senate[0].leastLoyal = mostLeast(memberSenateArray, missed, most);
+    stadistics.senate[0].mostLoyal = mostLeast(memberSenateArray, missedOrTotal, leastOrMost);
+    stadistics.senate[0].leastEngaged = mostLeast(memberSenateArray, missed, most);
+    stadistics.senate[0].mostEngaged = mostLeast(memberSenateArray, missedOrTotal, leastOrMost);
+    stadistics.senate[0].averageVotesAllParties = 
+    stadistics.senate[0].totalMembersAllParties = 
+} */
 // LLenamo' las tablas.
 var mytable1 = "<thead class='thead-light'><tr><th> Party </th><th> Votes </th><th> Percent </th></tr></thead>";
 mytable1 += "<tbody>";
@@ -136,9 +137,9 @@ mytable1 += "<tr><td class='font-weight-bold'>Total</td><td>" + 75 + "</td><td>"
 mytable1 += "</tbody>";
 document.getElementById('total-members').innerHTML = mytable1;
 
-/*
-var mytable1 = "<thead class='thead-light'><tr><th> Name </th><th> Missed Votes </th><th> %Missed </th></tr></thead>";
-var mostVoteSenate = mostVotes(memberSenateArray);
+
+/* var mytable1 = "<thead class='thead-light'><tr><th> Name </th><th> Missed Votes </th><th> %Missed </th></tr></thead>";
+var mostVoteSenate = mostLeast(memberSenateArray);
 mostVoteSenate.forEach(function (member) {
     mytable1 += "<tbody>";
     mytable1 += "<tr>"
@@ -173,8 +174,8 @@ document.getElementById('most-engaged').innerHTML = mytable1; */
 /* //////////////////////////
 /////////////////////////////
 Loyalty/////////////////// */
-var mytable1 = "<thead class='thead-light'><tr><th> Name </th><th> Total Votes </th><th> %votes </th></tr></thead>";
-var mostVoteSenate = mostLoyalVotes(memberSenateArray);
+var mytable1 = "<thead class='thead-light'><tr><th> Name </th><th> Missed Votes </th><th> %Missed </th></tr></thead>";
+var mostVoteSenate = mostLeast(memberSenateArray, least, missed);
 mostVoteSenate.forEach(function (member) {
     mytable1 += "<tbody>";
     mytable1 += "<tr>"
@@ -184,13 +185,13 @@ mostVoteSenate.forEach(function (member) {
         mytable1 += '<td>' + member.first_name + ' ' + member.middle_name + ' ' + member.last_name + '</td>';
     }
 
-    mytable1 += "<td>" + member.total_votes + "</td><td>" + member.votes_with_party_pct + " % </td></tr>";
+    mytable1 += "<td>" + member.missed_votes + "</td><td>" + member.missed_votes_pct + " % </td></tr>";
     mytable1 += "</tbody>";
 });
-document.getElementById('least-engaged').innerHTML = mytable1;
+document.getElementById('most-engaged').innerHTML = mytable1;
 
 var mytable1 = "<thead class='thead-light'><tr><th> Name </th><th> Missed Votes </th><th> %Missed </th></tr></thead>";
-var leastVoteSenate = lestLoyalVotes(memberSenateArray);
+var leastVoteSenate = mostLeast(memberSenateArray, most, missed);
 leastVoteSenate.forEach(function (member) {
     mytable1 += "<tbody>";
     mytable1 += "<tr>"
@@ -200,10 +201,10 @@ leastVoteSenate.forEach(function (member) {
         mytable1 += '<td>' + member.first_name + ' ' + member.middle_name + ' ' + member.last_name + '</td>';
     }
 
-    mytable1 += "<td>" + member.total_votes + "</td><td>" + member.votes_with_party_pct + " % </td></tr>";
+    mytable1 += "<td>" + member.missed_votes + "</td><td>" + member.missed_votes_pct + " % </td></tr>";
     mytable1 += "</tbody>";
 });
-document.getElementById('most-engaged').innerHTML = mytable1;
+document.getElementById('least-engaged').innerHTML = mytable1;
 
 
 
@@ -275,17 +276,3 @@ document.getElementById('most-engaged').innerHTML = mytable1;
     estadisticas[1].membersDemDoNotVoteWithParty = averageVotesWithParty(memberHouseArray, democrat);
 } */
 
-
-
-
-// console.table(memberSenateArray.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0)));
-/* console.table(memberSenateArray.sort(compare)); */
-/* function compare(a, b) {
-    if (a.missed_votes < b.missed_votes) {
-        return -1;
-    }
-    if (a.missed_votes > b.missed_votes) {
-        return 1;
-    }
-    return 0;
-} */

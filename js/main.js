@@ -344,7 +344,7 @@ function popularDropdown(state) {
 function compareStates(stateName) {
 
   var states = estados.filter(letters => letters.letrasEstado === stateName);
-  return states[0].nombreCompleto;
+  return states.nombreCompleto;
   // for (let i = 0; i < estados.nombres.length; i++) {
   //   if (stateName === estados.nombres[i].letrasEstado) {
   //     return estados.nombres[i].nombreCompleto;
@@ -357,7 +357,7 @@ function compareSelectStates(stateName) {
   if (stateName === "All") {
     return "All";
   } else {
-    return states[0].letrasEstado;
+    return states.letrasEstado;
   };
 }
 
