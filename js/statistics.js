@@ -4,73 +4,46 @@
 
 var memberSenateArray = dataSenate.results[0].members;
 var memberHouseArray = dataHouse.results[0].members;
-var independent = "I";
-var democrat = "D";
-var republican = "R";
-var loyal = "loyal";
-var attendance = "attendance";
-var least = "least";
-var most = "most";
-var stadistics = {
-    "senate": [{
-        "democrats": {
-            "numberOfMembers": 0,
-            "averageVotesWithParty": 0,
-        },
-        "republicans": {
-            "numberOfMembers": 0,
-            "averageVotesWithParty": 0,
-        },
-        "independents": {
-            "numberOfMembers": 0,
-            "averageVotesWithParty": 0,
-        },
-        "totalMembersAllParties": 0,
-        "averageVotesAllParties": 0,
-        "mostEngaged": 0,
-        "leastEngaged": 0,
-        "mostLoyal": 0,
-        "leastLoyal": 0
-    }],
-    "house": [{
-        "democrats": {
-            "numberOfMembers": 0,
-            "averageVotesWithParty": 0,
-        },
-        "republicans": {
-            "numberOfMembers": 0,
-            "averageVotesWithParty": 0,
-        },
-        "independents": {
-            "numberOfMembers": 0,
-            "averageVotesWithParty": 0,
-        },
-        "totalMembersAllParties": 0,
-        "averageVotesAllParties": 0,
-        "mostEngaged": 0,
-        "leastEngaged": 0,
-        "mostLoyal": 0,
-        "leastLoyal": 0
-    }],
-}
+const independent = "I";
+const democrat = "D";
+const republican = "R";
+const loyal = "loyal";
+const attendance = "attendance";
+const least = "least";
+const most = "most";
+var statistics = {
+    'numberOfDemocrats': 0,
+    'numberOfRepublicans': 0,
+    'numberOfIndependents': 0,
+    'averageVotesDemocrats': 0,
+    'averageVotesRepublicans': 0,
+    'averageVotesIndependents': 0,
+    'averageVotesAll': 0,
+    'mostAttendance': [],
+    'leastAttendance': [],
+    'mostLoyal': [],
+    'leastLoyal': [],
 
-verifyGlanceTable();
+}
+verifyPage();
+fillAtGlanceTable();
 verifyLoyalTable();
 verifyAttTable();
 
 /* //////////////////////////
-    Calculamos Estadisticas
+    CALCULOS
 ////////////////////////// */
-//Obtengo la cantidad de representantes por cada partido
+
+// Cantidad de representantes por cada partido.
 function countMembers(arrayM, partyChar) {
-    counted = arrayM.filter(e => e.party === partyChar);
+    let counted = arrayM.filter(e => e.party === partyChar);
     return counted.length;
 }
 // Cantidad promedio de votantes con cada partido. 
 function averageVotesWithParty(arrayM, partyChar) {
-    var dividerLength = 0;
-    var countPercent = 0;
-    var average = 0;
+    let dividerLength = 0;
+    let countPercent = 0;
+    let average = 0;
     for (let i = 0; i < arrayM.length; i++) {
         if (arrayM[i].party === partyChar) {
             countPercent += arrayM[i].votes_with_party_pct;
@@ -80,130 +53,207 @@ function averageVotesWithParty(arrayM, partyChar) {
     average = (countPercent / dividerLength).toFixed(2)
     return average;
 }
+// Cantidad promedio de votantes con cada partido. 
+function averageVotesWithPartyAll(arrayM) {
+    let dividerLength = 0;
+    let countPercent = 0;
+    let average = 0;
+    for (let i = 0; i < arrayM.length; i++) {
+        countPercent += arrayM[i].votes_with_party_pct;
+        dividerLength++
+    }
+    average = (countPercent / dividerLength).toFixed(2)
+    console.log(average);
+
+    return average;
+}
 // Most o Least de acuerdo a parámetros.
 function mostLeast(arrayM, leastOrMost, attendanceOrLoyal) {
-    var minLenght = Math.round((arrayM.length * 10) / 100) //
-    var aux = [];
+    const minLenght = Math.round((arrayM.length * 10) / 100) //
+    let aux = [];
     if (leastOrMost === "least") {
         if (attendanceOrLoyal === "attendance") {
-            arrayM.sort((a, b) => (a.missed_votes > b.missed_votes) ? 1 : ((b.missed_votes > a.missed_votes) ? -1 : 0));
-            for (let i = 0; aux.length < minLenght; i++) {
+            arrayM.sort((a, b) => (a.missed_votes_pct > b.missed_votes_pct) ? 1 : ((b.missed_votes_pct > a.missed_votes_pct) ? -1 : 0));
+            for (var i = 0; aux.length < minLenght; i++) {
                 aux.push(arrayM[i]);
+            }
+            while (aux[aux.length - 1].missed_votes_pct === arrayM[i + 1].missed_votes_pct) {
+                aux.push(arrayM[i + 1]);
+                i++;
             }
             return aux;
         } else if (attendanceOrLoyal === "loyal") {
-            arrayM.sort((a, b) => (a.total_votes > b.total_votes) ? 1 : ((b.total_votes > a.total_votes) ? -1 : 0));
-            for (let i = 0; aux.length < minLenght; i++) {
+            arrayM.sort((a, b) => (a.votes_with_party_pct > b.votes_with_party_pct) ? 1 : ((b.votes_with_party_pct > a.votes_with_party_pct) ? -1 : 0));
+            for (var i = 0; aux.length < minLenght; i++) {
                 aux.push(arrayM[i]);
+            }
+            while (aux[aux.length - 1].votes_with_party_pct === arrayM[i + 1].votes_with_party_pct) {
+                aux.push(arrayM[i + 1]);
+                i++;
             }
             return aux;
         }
     } else if (leastOrMost === "most") {
         if (attendanceOrLoyal === "attendance") {
-            arrayM.sort((a, b) => (a.missed_votes < b.missed_votes) ? 1 : ((b.missed_votes < a.missed_votes) ? -1 : 0));
-            for (let i = 0; aux.length < minLenght; i++) {
+            arrayM.sort((a, b) => (a.missed_votes_pct < b.missed_votes_pct) ? 1 : ((b.missed_votes_pct < a.missed_votes_pct) ? -1 : 0));
+            for (var i = 0; aux.length < minLenght; i++) {
                 aux.push(arrayM[i]);
+            }
+            while (aux[aux.length - 1].missed_votes_pct === arrayM[i + 1].missed_votes_pct) {
+                aux.push(arrayM[i + 1]);
+                i++;
             }
             return aux;
         } else if (attendanceOrLoyal === "loyal") {
-            arrayM.sort((a, b) => (a.total_votes < b.total_votes) ? 1 : ((b.total_votes < a.total_votes) ? -1 : 0));
-            for (let i = 0; aux.length < minLenght; i++) {
+            arrayM.sort((a, b) => (a.votes_with_party_pct < b.votes_with_party_pct) ? 1 : ((b.votes_with_party_pct < a.votes_with_party_pct) ? -1 : 0));
+            for (var i = 0; aux.length < minLenght; i++) {
                 aux.push(arrayM[i]);
+            }
+            while (aux[aux.length - 1].votes_with_party_pct === arrayM[i + 1].votes_with_party_pct) {
+                aux.push(arrayM[i + 1]);
+                i++;
             }
             return aux;
         }
     }
 }
 
-/* //////////////////////////
-    Verificamos H o S
-////////////////////////// */
-function verifyGlanceTable() {
-    if (document.getElementById('total-members-s')) {
-        fillAtGlanceTable('total-members-s');
-
-    } else if (document.getElementById('total-members-h')) {
-        fillAtGlanceTable('total-members-h');
+/*//////////////////////////
+    VERIFICACION
+//////////////////////////*/
+// Llena estadísticas con data Senate, o data House.
+function verifyPage() {
+    if (document.getElementById("senate")) {
+        fillStatistics(memberSenateArray)
+    } else if (document.getElementById("house")) {
+        fillStatistics(memberHouseArray)
     }
 }
 function verifyAttTable() {
     if (document.getElementById('most-engaged-s')) {
-        fillAttendanceTable(memberSenateArray, 'most-engaged-s');
-        fillAttendanceTable(memberSenateArray, 'least-engaged-s');
+        fillAttendanceTable(statistics.leastAttendance, 'most-engaged-s');
+        fillAttendanceTable(statistics.mostAttendance, 'least-engaged-s');
 
     } else if (document.getElementById('most-engaged-h')) {
-        fillAttendanceTable(memberHouseArray, 'most-engaged-h');
-        fillAttendanceTable(memberHouseArray, 'least-engaged-h');
+        fillAttendanceTable(statistics.leastAttendance, 'most-engaged-h');
+        fillAttendanceTable(statistics.mostAttendance, 'least-engaged-h');
     }
 }
 function verifyLoyalTable() {
     if (document.getElementById('most-loyal-s')) {
-        fillLoyaltyTable(memberSenateArray, 'most-loyal-s');
-        fillLoyaltyTable(memberSenateArray, 'least-loyal-s');
+        fillLoyaltyTable(statistics.leastLoyal, 'most-loyal-s');
+        fillLoyaltyTable(statistics.mostLoyal, 'least-loyal-s');
 
     } else if (document.getElementById('most-loyal-h')) {
-        fillLoyaltyTable(memberHouseArray, 'most-loyal-h');
-        fillLoyaltyTable(memberHouseArray, 'least-loyal-h');
+        fillLoyaltyTable(statistics.leastLoyal, 'most-loyal-h');
+        fillLoyaltyTable(statistics.mostLoyal, 'least-loyal-h');
     }
 }
+
 /* //////////////////////////
-    Llenamo' las tablas.
+    LLENAR TABLAS
 ////////////////////////// */
-function fillAtGlanceTable(id) { // TODO. Crear valores según H o S
-    var tableElement = "<thead class='thead-light'><tr><th> Party </th><th> Votes </th><th> Percent </th></tr></thead>";
-    tableElement += "<tbody>";
-    tableElement += "<tr><td>Democrat</td><td>" + 15 + "</td><td>" + 12 + " % </td></tr>";
-    tableElement += "<tr><td>Republican</td><td>" + 16 + "</td><td>" + 13 + " % </td></tr>";
-    // TODO. Clausula por si no hay elementos.
-    tableElement += "<tr><td>Independent</td><td>" + 17 + "</td><td>" + 14 + " %</td></tr>";
-    tableElement += "</tbody>";
-    tableElement += "<tr><td class='font-weight-bold'>Total</td><td class='font-weight-bold'>" + 75 + "</td><td class='font-weight-bold'>" + 8 + " %</td></tr>";
-    tableElement += "</tbody>";
-    if (id === "total-members-s") {
-        document.getElementById('total-members-s').innerHTML = tableElement;
-    } else {
-        document.getElementById('total-members-h').innerHTML = tableElement;
-    }
+// Llenar objeto estadisticas
+function fillStatistics(arrayM) {
+    statistics.numberOfDemocrats = countMembers(arrayM, democrat);
+    statistics.numberOfRepublicans = countMembers(arrayM, republican);
+    statistics.numberOfIndependents = countMembers(arrayM, independent);
+    statistics.averageVotesDemocrats = averageVotesWithParty(arrayM, democrat);
+    statistics.averageVotesRepublicans = averageVotesWithParty(arrayM, republican);
+    statistics.averageVotesIndependents = averageVotesWithParty(arrayM, independent);
+    statistics.averageVotesAll = averageVotesWithPartyAll(arrayM);
+    statistics.leastAttendance = mostLeast(arrayM, least, attendance);
+    statistics.mostAttendance = mostLeast(arrayM, most, attendance);
+    statistics.leastLoyal = mostLeast(arrayM, least, loyal);
+    statistics.mostLoyal = mostLeast(arrayM, most, loyal);
 }
-
+// Llenar tabla Glance
+function fillAtGlanceTable() {
+    let tableTotalMembers = document.getElementById('total-members');
+    let table = `<thead class='thead-light'><tr><th> Party </th><th> Members </th><th> Percent of Votes</th></tr></thead>`;
+    table += `<tbody>`;
+    table += `<tr><td>Democrat</td><td>${statistics.numberOfDemocrats}</td><td>${statistics.averageVotesDemocrats} %</td></tr>`;
+    table += `<tr><td>Republican</td><td>${statistics.numberOfRepublicans}</td><td>${statistics.averageVotesRepublicans} %</td></tr>`;
+    if (statistics.numberOfIndependents > 0) {
+        table += `<tr><td>Independent</td><td>${statistics.numberOfIndependents}</td><td>${statistics.averageVotesIndependents} %</td></tr>`;
+    }
+    table += `<tr><td class='font-weight-bold'>Total</td><td class='font-weight-bold'>${sumMbrs()}</td><td class='font-weight-bold'> ${statistics.averageVotesAll} %</td></tr>`;
+    table += `</tbody>`;
+    tableTotalMembers.innerHTML = table;
+}
+// Lenar tablas Attendance
 function fillAttendanceTable(arrayM, id) {
-    let tableElement = "<thead class='thead-light'><tr><th> Name </th><th> Missed Votes </th><th> %Missed </th></tr></thead>";
-    if (id === "most-engaged-s" || id === "most-engaged-h") {
-        var attendanceArray = mostLeast(arrayM, least, attendance);
-    } else {
-        var attendanceArray = mostLeast(arrayM, most, attendance);
-    }
-    attendanceArray.forEach(function (member) {
-        tableElement += "<tbody>";
-        tableElement += "<tr>"
-        if (member.middle_name === null) { // Si no tiene segundo nombre, solo agrega nombre y apellido.
-            tableElement += '<td><a href="' + member.url + '">' + member.first_name + ' ' + member.last_name + '</a></td>';
-        } else { // De lo contrario, nombre, segundo nombre y apellido.
-            tableElement += '<td><a href="' + member.url + '">' + member.first_name + ' ' + member.middle_name + ' ' + member.last_name + '</a></td>';
+    //Obtengo la tabla tabla
+    const table = document.getElementById(id);
+    //Crear head de la tabla.
+    const thead = table.createTHead();
+    thead.innerHTML = '<tr><th class="thead-light">Name</th><th>Missed Votes</th><th> Missed % </th></tr>';
+    //Crear body de la tabla.
+    const tbody = table.createTBody();
+    // Crear una fila por cada miembro.
+    arrayM.forEach(miembro => {
+        const row = document.createElement('tr');
+        const nameM = document.createElement('td');
+        const missedVotesM = document.createElement('td');
+        const missedVotesPercentM = document.createElement('td');
+        // Asignar valores.
+        // Controlar si tienen segundo nombre.
+        if (miembro.middle_name === null) {
+            nameM.textContent = `${miembro.first_name} ${miembro.last_name}`;
+        } else {
+            nameM.textContent = `${miembro.first_name} ${miembro.middle_name} ${miembro.last_name}`;
         }
-        tableElement += "<td>" + member.missed_votes + "</td><td>" + member.missed_votes_pct + " % </td></tr>";
-        tableElement += "</tbody>";
+        missedVotesM.textContent = miembro.missed_votes;
+        missedVotesPercentM.textContent = `${miembro.missed_votes_pct} %`;
+        //Insertar en la fila
+        row.appendChild(nameM);
+        row.appendChild(missedVotesM);
+        row.appendChild(missedVotesPercentM);
+        //Insertar en el body de la tabla.
+        tbody.appendChild(row);
     });
-    document.getElementById(id).innerHTML = tableElement;
+}
+// Lenar tablas Loyal
+function fillLoyaltyTable(arrayM, id) {
+    //Obtengo la tabla tabla
+    const table = document.getElementById(id);
+    //Crear head de la tabla.
+    const thead = table.createTHead();
+    thead.innerHTML = '<tr><th class="thead-light">Name</th><th>Party Votes</th><th> Votes % </th></tr>';
+    //Crear body de la tabla.
+    const tbody = table.createTBody();
+    // Crear una fila por cada miembro.
+    arrayM.forEach(miembro => {
+        const row = document.createElement('tr');
+        const nameM = document.createElement('td');
+        const partyVotesM = document.createElement('td');
+        const partyVotesPercentM = document.createElement('td');
+        // Asignar valores.
+        // Controlar si tienen segundo nombre.
+        if (miembro.middle_name === null) {
+            nameM.textContent = `${miembro.first_name} ${miembro.last_name}`;
+        } else {
+            nameM.textContent = `${miembro.first_name} ${miembro.middle_name} ${miembro.last_name}`;
+        }
+        partyVotesM.textContent = miembro.total_votes;
+        partyVotesPercentM.textContent = `${miembro.votes_with_party_pct} %`;
+        //Insertar en la fila
+        row.appendChild(nameM);
+        row.appendChild(partyVotesM);
+        row.appendChild(partyVotesPercentM);
+        //Insertar en el body de la tabla.
+        tbody.appendChild(row);
+    });
 }
 
-function fillLoyaltyTable(arrayM, id) {
-    let tableElement = "<thead class='thead-light'><tr><th> Name </th><th> Party Votes </th><th> % Votes </th></tr></thead>";
-    if (id === "most-loyal-s" || id === "most-loyal-h") {
-        var loyaltyArray = mostLeast(arrayM, least, loyal);
-    } else {
-        var loyaltyArray = mostLeast(arrayM, most, loyal);
-    }
-    loyaltyArray.forEach(function (member) {
-        tableElement += "<tbody>";
-        tableElement += "<tr>"
-        if (member.middle_name === null) { // Si no tiene segundo nombre, solo agrega nombre y apellido.
-            tableElement += '<td><a href="' + member.url + '">' + member.first_name + ' ' + member.last_name + '</a></td>';
-        } else { // De lo contrario, nombre, segundo nombre y apellido.
-            tableElement += '<td><a href="' + member.url + '">' + member.first_name + ' ' + member.middle_name + ' ' + member.last_name + '</a></td>';
-        }
-        tableElement += "<td>" + member.total_votes + "</td><td>" + member.votes_with_party_pct + " % </td></tr>";
-        tableElement += "</tbody>";
-    });
-    document.getElementById(id).innerHTML = tableElement;
+/*/////////////////////////
+    OTROSSSSSSSSSSS
+//////////////////////////*/
+// Suma total de miembros.
+function sumMbrs() {
+    let x = statistics.numberOfDemocrats + statistics.numberOfRepublicans + statistics.numberOfIndependents
+    return x;
 }
+
+
+

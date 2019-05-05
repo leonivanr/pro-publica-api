@@ -41,7 +41,7 @@ function createTable(id, data) {
     }
     partyM.textContent = miembro.party;
     stateM.textContent = miembro.state;
-    seniorityM.textContent = miembro.seniority;
+        seniorityM.textContent = miembro.seniority;
     votesM.textContent = `${miembro.votes_with_party_pct} %`;
     //Insertar en la fila
     row.appendChild(nameM);
