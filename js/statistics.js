@@ -53,7 +53,7 @@ function averageVotesWithParty(arrayM, partyChar) {
     average = (countPercent / dividerLength).toFixed(2)
     return average;
 }
-// Cantidad promedio de votantes con cada partido. 
+// Cantidad promedio de votantes de todos los partidos. 
 function averageVotesWithPartyAll(arrayM) {
     let dividerLength = 0;
     let countPercent = 0;
@@ -63,20 +63,23 @@ function averageVotesWithPartyAll(arrayM) {
         dividerLength++
     }
     average = (countPercent / dividerLength).toFixed(2)
-    console.log(average);
 
     return average;
 }
 // Most o Least de acuerdo a parámetros.
 function mostLeast(arrayM, leastOrMost, attendanceOrLoyal) {
+    // Obtengo la cantidad de elementos que cubren ese 10%.
     const minLenght = Math.round((arrayM.length * 10) / 100) //
     let aux = [];
     if (leastOrMost === "least") {
         if (attendanceOrLoyal === "attendance") {
+            // Ordeno el array comparando los valores de missed_votes.
             arrayM.sort((a, b) => (a.missed_votes_pct > b.missed_votes_pct) ? 1 : ((b.missed_votes_pct > a.missed_votes_pct) ? -1 : 0));
+            // Itero hasta que llegue al 10%.
             for (var i = 0; aux.length < minLenght; i++) {
                 aux.push(arrayM[i]);
             }
+            // Cuando llega al último elemento, verifica si el que sigue es igual.
             while (aux[aux.length - 1].missed_votes_pct === arrayM[i + 1].missed_votes_pct) {
                 aux.push(arrayM[i + 1]);
                 i++;
@@ -141,12 +144,12 @@ function verifyAttTable() {
 }
 function verifyLoyalTable() {
     if (document.getElementById('most-loyal-s')) {
-        fillLoyaltyTable(statistics.leastLoyal, 'most-loyal-s');
-        fillLoyaltyTable(statistics.mostLoyal, 'least-loyal-s');
+        fillLoyaltyTable(statistics.mostLoyal, 'most-loyal-s');
+        fillLoyaltyTable(statistics.leastLoyal, 'least-loyal-s');
 
     } else if (document.getElementById('most-loyal-h')) {
-        fillLoyaltyTable(statistics.leastLoyal, 'most-loyal-h');
-        fillLoyaltyTable(statistics.mostLoyal, 'least-loyal-h');
+        fillLoyaltyTable(statistics.mostLoyal, 'most-loyal-h');
+        fillLoyaltyTable(statistics.leastLoyal, 'least-loyal-h');
     }
 }
 
