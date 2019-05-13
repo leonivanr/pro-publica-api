@@ -238,7 +238,7 @@ function fillLoyaltyTable(arrayM, id) {
         } else {
             nameM.textContent = `${miembro.first_name} ${miembro.middle_name} ${miembro.last_name}`;
         }
-        partyVotesM.textContent = miembro.total_votes;
+        partyVotesM.textContent =  Math.round((miembro.total_votes * miembro.votes_with_party_pct) /100) ;
         partyVotesPercentM.textContent = `${miembro.votes_with_party_pct} %`;
         //Insertar en la fila
         row.appendChild(nameM);
