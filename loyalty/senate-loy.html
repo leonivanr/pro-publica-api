@@ -13,9 +13,11 @@
   <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 <!-- body -->
-
+//TODO - Verificar si hay forma de generar la primera tabla de datos (Arriba-Derecha), solo con una llamada a la función desde HTML,
+//O hay que crearla en el html.
+//TODO - Crear tablas most/loyal.
 <body>
-  <div class="container mt-4">
+  <div id='vue-app'class="container mt-4">
     <!-- Header -->
     <div class="row">
       <div class="col-12 col-md-4"><a href="../index.html"><img src="../img/logo.png" class="img-fluid" alt="Logo"></a>
@@ -79,6 +81,20 @@
           <h4 class="my-0">Senate at a glance</h4>
         </div>
         <table id="total-members" class="table table-hover mt-4">
+          <thead class="thead-light">
+            <tr>
+              <td>Party</td>
+              <td>Members</td>
+              <td>Votes %</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -113,19 +129,15 @@
       </div>
     </div>
   </div>
-  <!-- Links JavaScript -->
-  <script src="../js/house-113.js"></script>
-  <script src="../js/senate-113.js"></script>
-  <script src="../js/statistics.js"></script>
 
   <!-- jQuery library -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+  <!-- Links JavaScript -->
+  <script src="../js/app.js"></script>
 </body>
 
 </html>
