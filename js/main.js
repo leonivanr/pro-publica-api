@@ -1,3 +1,5 @@
+// TODO: Cargar solamente el array que se va a utilizar.
+
 var memberSenateArray = dataSenate.results[0].members;
 var memberHouseArray = dataHouse.results[0].members;
 
