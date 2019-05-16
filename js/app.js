@@ -1,6 +1,32 @@
 // TODO: Verificar por qué no funciona el fucking fetch().
 // TODO: Verificar el funcionamiento de filtros.
 // TODO: Verificar si es necesario createTable(), o se arma desde HTML.
+var dataM = {};
+
+/* 
+// Prueba fetch:
+fetch('https://randomuser.me/api/?results=10')
+    .then((respuesta) => respuesta.json()) // Transforma los datos en JSON.
+    .then((data) => {
+        dataM = data.results;
+        console.table(dataM);
+    })
+    .catch((error) => console.log(error))
+ */
+
+fetch('http://api.propublica.org/congress/v1/113/senate/members.json', {
+        method: 'GET',
+        headers: new Headers({
+            'X-API-Key': 'D2sQEk1LttT9w8Vydx7vfZZtD3Cag10zupr6TxbL'
+        })
+    })
+    .then((respuesta) => respuesta.json()) // Transforma los datos en JSON.
+    .then((data) => {
+        console.log(JSON.stringify(data))// Intento mostrar los datos que recibo por consola.
+    })
+    .catch((error) => console.log(error))// En caso de haber algún error, mostrarlo por consola.
+
+
 
 
 var app = new Vue({
@@ -134,6 +160,59 @@ var app = new Vue({
 
                         return items; */
             return alert(array[0]);
+        },
+        mostLeast: (arrayM, leastOrMost, attendanceOrLoyal) => {
+            // Obtengo la cantidad de elementos que cubren ese 10%.
+            const minLenght = Math.round((arrayM.length * 10) / 100) //
+            let aux = [];
+            if (leastOrMost === "least") {
+                if (attendanceOrLoyal === "attendance") {
+                    // Ordeno el array comparando los valores de missed_votes.
+                    arrayM.sort((a, b) => (a.missed_votes_pct > b.missed_votes_pct) ? 1 : ((b.missed_votes_pct > a.missed_votes_pct) ? -1 : 0));
+                    // Itero hasta que llegue al 10%.
+                    for (var i = 0; aux.length < minLenght; i++) {
+                        aux.push(arrayM[i]);
+                    }
+                    // Cuando llega al último elemento, verifica si el que sigue es igual.
+                    while (aux[aux.length - 1].missed_votes_pct === arrayM[i + 1].missed_votes_pct) {
+                        aux.push(arrayM[i + 1]);
+                        i++;
+                    }
+                    return aux;
+                } else if (attendanceOrLoyal === "loyal") {
+                    arrayM.sort((a, b) => (a.votes_with_party_pct > b.votes_with_party_pct) ? 1 : ((b.votes_with_party_pct > a.votes_with_party_pct) ? -1 : 0));
+                    for (var i = 0; aux.length < minLenght; i++) {
+                        aux.push(arrayM[i]);
+                    }
+                    while (aux[aux.length - 1].votes_with_party_pct === arrayM[i + 1].votes_with_party_pct) {
+                        aux.push(arrayM[i + 1]);
+                        i++;
+                    }
+                    return aux;
+                }
+            } else if (leastOrMost === "most") {
+                if (attendanceOrLoyal === "attendance") {
+                    arrayM.sort((a, b) => (a.missed_votes_pct < b.missed_votes_pct) ? 1 : ((b.missed_votes_pct < a.missed_votes_pct) ? -1 : 0));
+                    for (var i = 0; aux.length < minLenght; i++) {
+                        aux.push(arrayM[i]);
+                    }
+                    while (aux[aux.length - 1].missed_votes_pct === arrayM[i + 1].missed_votes_pct) {
+                        aux.push(arrayM[i + 1]);
+                        i++;
+                    }
+                    return aux;
+                } else if (attendanceOrLoyal === "loyal") {
+                    arrayM.sort((a, b) => (a.votes_with_party_pct < b.votes_with_party_pct) ? 1 : ((b.votes_with_party_pct < a.votes_with_party_pct) ? -1 : 0));
+                    for (var i = 0; aux.length < minLenght; i++) {
+                        aux.push(arrayM[i]);
+                    }
+                    while (aux[aux.length - 1].votes_with_party_pct === arrayM[i + 1].votes_with_party_pct) {
+                        aux.push(arrayM[i + 1]);
+                        i++;
+                    }
+                    return aux;
+                }
+            }
         }
     }
 })
@@ -143,15 +222,4 @@ var app = new Vue({
 // D2sQEk1LttT9w8Vydx7vfZZtD3Cag10zupr6TxbL 
 // PROPUBLICA DATA
 //'http://api.propublica.org/congress/v1/113/senate/members.json'
-
-/* fetch('http://api.propublica.org/congress/v1/113/senate/members.json', {
-        method: 'GET',
-        headers: new Headers ({
-            'X-API-Key':'iv8LMc9T9sQKOc0EfDC1NLtQU68pFsF6O6W3NPJz'
-        })
-    })
-    .then((respuesta) => respuesta.json()) // Transforma los datos en JSON.
-    .then((data) => {
-         console.log(JSON.stringify(data));
-    })
- */
+//'http://api.propublica.org/congress/v1/113/house/members.json'
