@@ -15,7 +15,7 @@
 <!-- body -->
 
 <body>
-  <div id="vue-app" class="container mt-4">
+  <div id="senate" class="container mt-4">
     <!-- Header -->
     <div class="row">
       <div class="col-12 col-md-4"><a href="../index.html"><img src="../img/logo.png" class="img-fluid" alt="Logo"></a>
@@ -175,7 +175,7 @@
       </div>
     </div>
     <!--Senate Table  -->
-    <div class="container">
+    <div id="vue-app" class="container">
       <div class="row mt-2">
         <div class="table-responsive">
           <table class="table table-hover" id="senate-table">
@@ -189,12 +189,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="member of memberSenate">
-                <td>{{member.name}}</td>
+              <tr v-for="member of membersList">
+                <td>{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</td>
                 <td>{{member.party}}</td>
-                <td>{{member.votes}}</td>
-                <td>{{member.seniority}}</td>
                 <td>{{member.state}}</td>
+                <td>{{member.seniority}}</td>
+                <td>{{member.votes_with_party_pct}}</td>
               </tr>
             </tbody>
           </table>
