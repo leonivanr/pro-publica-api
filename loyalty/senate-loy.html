@@ -13,11 +13,9 @@
   <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 <!-- body -->
-//TODO - Verificar si hay forma de generar la primera tabla de datos (Arriba-Derecha), solo con una llamada a la función desde HTML,
-//O hay que crearla en el html.
-//TODO - Crear tablas most/loyal.
-<body>
-  <div id='vue-app'class="container mt-4">
+
+<body id="senate">
+  <div id="vue-app" class="container mt-4">
     <!-- Header -->
     <div class="row">
       <div class="col-12 col-md-4"><a href="../index.html"><img src="../img/logo.png" class="img-fluid" alt="Logo"></a>
@@ -83,16 +81,31 @@
         <table id="total-members" class="table table-hover mt-4">
           <thead class="thead-light">
             <tr>
-              <td>Party</td>
-              <td>Members</td>
-              <td>Votes %</td>
+              <th>Party</th>
+              <th>Members</th>
+              <th>Votes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Democrats</td>
+              <td>{{numberOfDemocrats}}</td>
+              <td>{{averageVotesDemocrats}} %</td>
+            </tr>
+            <tr>
+              <td>Republicans</td>
+              <td>{{numberOfRepublicans}}</td>
+              <td>{{averageVotesRepublicans}} %</td>
+            </tr>
+            <tr v-show="averageVotesIndependents > 0">
+              <td>Independents</td>
+              <td>{{numberOfIndependents}}</td>
+              <td>{{averageVotesIndependents}} %</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>{{totalMembers}}</td>
+              <td>{{averageVotesAll}} %</td>
             </tr>
           </tbody>
         </table>
@@ -107,7 +120,21 @@
           <h4 class="my-0">Least Loyal (Bottom 10% of Party)</h4>
         </div>
         <div class="table-responsive">
-          <table id="least-loyal-s" class="table table-hover mt-4">
+          <table class="table table-hover mt-4">
+            <thead class="thead-light">
+              <tr>
+                <th>Name</th>
+                <th>Votes</th>
+                <th>Votes %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="member of leastLoyal">
+                <td>{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</td>
+                <td>{{member.total_votes}}</td>
+                <td>{{member.votes_with_party_pct}} %</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -117,7 +144,21 @@
           <h4 class="my-0">Most Loyal (Top 10% of Party)</h4>
         </div>
         <div class="table-responsive">
-          <table id="most-loyal-s" class="table table-hover mt-4">
+          <table class="table table-hover mt-4">
+            <thead class="thead-light">
+              <tr>
+                <th>Name</th>
+                <th>Votes</th>
+                <th>Votes %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="member of mostLoyal">
+                <td>{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</td>
+                <td>{{member.total_votes}}</td>
+                <td>{{member.votes_with_party_pct}} %</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>

@@ -14,8 +14,8 @@
 </head>
 <!-- body -->
 
-<body>
-  <div id="senate" class="container mt-4">
+<body id="senate">
+  <div id="vue-app" class="container mt-4">
     <!-- Header -->
     <div class="row">
       <div class="col-12 col-md-4"><a href="../index.html"><img src="../img/logo.png" class="img-fluid" alt="Logo"></a>
@@ -85,7 +85,7 @@
     <div class="container">
       <div class="row">
         <!-- Checkbox -->
-        <div id="checkboxes" @change='filterTable'class="card bg-light col-md-12 py-1">
+        <div id="checkboxes" @change='filterTable' class="card bg-light col-md-12 py-1">
           <div class="row no-gutters">
             
             <label class="col-md-2 my-auto font-weight-bold">Party Affiliation:</label>
@@ -175,7 +175,7 @@
       </div>
     </div>
     <!--Senate Table  -->
-    <div id="vue-app" class="container">
+    <div class="container">
       <div class="row mt-2">
         <div class="table-responsive">
           <table class="table table-hover" id="senate-table">

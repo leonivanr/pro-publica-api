@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 
-<body>
+<body id="senate">
   <div id='vue-app' class="container mt-4">
     <!-- Header -->
     <div class="row">
@@ -80,11 +80,40 @@
           may (if present) cast the tiebreaking vote.</p>
       </div>
       <!-- table -->
-      <div id='senate' class="col-md-5">
+      <div class="col-md-5">
         <div class="card card-body bg-light py-3">
           <h4 class="my-0">Senate at a glance</h4>
         </div>
-        <table id="total-members" class="table table-hover mt-4">
+        <table class="table table-hover mt-3">
+          <thead class="thead-light">
+            <tr>
+              <th>Party</th>
+              <th>Members</th>
+              <th>Votes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Democrats</td>
+              <td>{{numberOfDemocrats}}</td>
+              <td>{{averageVotesDemocrats}} %</td>
+            </tr>
+            <tr>
+              <td>Republicans</td>
+              <td>{{numberOfRepublicans}}</td>
+              <td>{{averageVotesRepublicans}} %</td>
+            </tr>
+            <tr v-show="averageVotesIndependents > 0">
+              <td>Independents</td>
+              <td>{{numberOfIndependents}}</td>
+              <td>{{averageVotesIndependents}} %</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>{{totalMembers}}</td>
+              <td>{{averageVotesAll}} %</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -97,7 +126,21 @@
           <h4 class="my-0">Least Engaged (Bottom 10% Attendance)</h4>
         </div>
         <div class="table-responsive">
-          <table id="least-engaged-s" class="table table-hover mt-4">
+          <table class="table table-hover mt-3">
+              <thead class="thead-light">
+                <tr>
+                  <th>Name</th>
+                  <th>Missed Votes</th>
+                  <th>Missed %</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="member of mostAttendance">
+                  <td>{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</td>
+                  <td>{{member.missed_votes}}</td>
+                  <td>{{member.missed_votes_pct}} %</td>
+                </tr>
+              </tbody>
           </table>
         </div>
       </div>
@@ -107,7 +150,21 @@
           <h4 class="my-0">Most Engaged (Top 10% Attendance)</h4>
         </div>
         <div class="table-responsive">
-          <table id="most-engaged-s" class="table table-hover mt-4">
+          <table class="table table-hover mt-3">
+            <thead class="thead-light">
+              <tr>
+                <th>Name</th>
+                <th>Missed Votes</th>
+                <th>Missed %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="member of leastAttendance">
+                <td>{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</td>
+                <td>{{member.missed_votes}}</td>
+                <td>{{member.missed_votes_pct}} %</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
