@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>113° Congress | Senate Data</title>
+  <title>113° Congress | House Loyalty</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" href="/styles/style.css">
@@ -30,7 +30,7 @@
           <!-- Links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="../index.html">Home</a>
+              <a class="nav-link" href="../index.html">Home</a>
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -52,7 +52,7 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbardrop" data-toggle="dropdown">
                 Party Loyalty
               </a>
               <div class="dropdown-menu">
@@ -78,7 +78,10 @@
         <div class="card card-body bg-light py-3">
           <h4 class="my-0">House at a glance</h4>
         </div>
-        <table id="total-members" class="table table-hover mt-4">
+        <div id="cargando" class="" v-show='loading'>
+          <img src="../img/loader.gif" alt="Cargando" class="ml-5">
+        </div>
+        <table id="total-members" class="table table-hover mt-4" v-show='show'>
           <thead class="thead-light">
             <tr>
               <th>Party</th>
@@ -112,8 +115,13 @@
       </div>
     </div>
     <hr>
+    <div class="alert alert-danger col-12 mt-2" v-show='alerta'>
+      <strong><i class="fas fa-exclamation-triangle"></i> Cannot retrieve information from API.</strong> Try
+      again in a few
+      seconds.
+    </div>
     <!-- 2 & 3 tables -->
-    <div class="row mt-4 px-2">
+    <div class="row mt-4 px-2" v-show='show'>
       <!-- Left Table -->
       <div class="col-md-6">
         <div class="card card-body text-center bg-light py-3">
@@ -130,7 +138,7 @@
             </thead>
             <tbody>
               <tr v-for="member of leastLoyal">
-                <td>{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</td>
+                <td><a :href="member.url">{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</a></td>
                 <td>{{member.total_votes}}</td>
                 <td>{{member.votes_with_party_pct}} %</td>
               </tr>
@@ -154,7 +162,7 @@
             </thead>
             <tbody>
               <tr v-for="member of mostLoyal">
-                <td>{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</td>
+                <td><a :href="member.url">{{member.last_name}}, {{member.first_name}} {{member.middle_name}}</a></td>
                 <td>{{member.total_votes}}</td>
                 <td>{{member.votes_with_party_pct}} %</td>
               </tr>

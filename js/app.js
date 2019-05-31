@@ -24,13 +24,16 @@ var app = new Vue({
         leastAttendance: [],
         mostLoyal: [],
         leastLoyal: [],
+        show: false,
+        loading: true,
+        alerta: false,
     },
     methods: {
         getData: () => {
             fetch(app.siteUrl, {
-                    headers: {
+                    headers: new Headers({
                         'X-API-Key': 'D2sQEk1LttT9w8Vydx7vfZZtD3Cag10zupr6TxbL'
-                    }
+                    })
                 })
                 .then((respuesta) => respuesta.json()) // Transforma los datos en JSON.
                 .then((jsonData) => {
@@ -43,15 +46,21 @@ var app = new Vue({
                     app.averageVotesDemocrats = app.averageVotesWithParty(jsonData.results[0].members, 'D');
                     app.averageVotesRepublicans = app.averageVotesWithParty(jsonData.results[0].members, 'R');
                     app.averageVotesIndependents = app.averageVotesWithParty(jsonData.results[0].members, 'I');
-                    app.mostAttendance = app.mostLeast(jsonData.results[0].members,'most','attendance');
-                    app.leastAttendance = app.mostLeast(jsonData.results[0].members,'least','attendance');
-                    app.mostLoyal = app.mostLeast(jsonData.results[0].members,'most','loyal');
-                    app.leastLoyal = app.mostLeast(jsonData.results[0].members,'least','loyal');
+                    app.mostAttendance = app.mostLeast(jsonData.results[0].members, 'most', 'attendance');
+                    app.leastAttendance = app.mostLeast(jsonData.results[0].members, 'least', 'attendance');
+                    app.mostLoyal = app.mostLeast(jsonData.results[0].members, 'most', 'loyal');
+                    app.leastLoyal = app.mostLeast(jsonData.results[0].members, 'least', 'loyal');
                     app.totalMembers = (app.numberOfDemocrats + app.numberOfIndependents + app.numberOfRepublicans);
-                    
+                    setTimeout(() => {
+                        app.loading = false;
+                        app.show = true;
+                    }, 500)
                 })
                 // Intento mostrar los datos que recibo por consola.
-                .catch((error) => console.error("ERROR DE FETCH")) // En caso de haber algún error, mostrarlo por consola.
+                .catch((error) => {
+                    app.alerta = true;
+                    app.loading = false;
+                }) // En caso de haber algún error, mostrarlo por consola.
         },
         filterTable: () => {
             let members = app.membersAux;
@@ -169,4 +178,3 @@ var app = new Vue({
     },
 })
 app.getData();
-
