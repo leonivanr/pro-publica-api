@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+
+<head>
+  <meta charset="utf-8">
+  <title>113° Congress | State Legislatures</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+</head>
+<!-- body -->
+
+<body>
+  <div id="vue-app" class="container mt-4">
+    <!-- Header -->
+    <div class="row">
+      <div class="col-12 col-md-4"><a href="../index.html"><img src="../img/logo.png" class="img-fluid" alt="Logo"></a>
+      </div>
+      <div class="d-none d-md-block col-md-8 text-right"><i class="fas fa-envelope"></i> <a
+          href="emailto:info@tgif.com">info@tgif</a></div>
+    </div>
+    <!-- NavBar -->
+    <div class="row mt-2">
+      <div class="col-md-12">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light border rounded">
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Congress 113
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="../congress/house.html">House</a>
+                <a class="dropdown-item" href="../congress/senate.html">Senate</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Attendance
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="../attendance/house-at.html">House</a>
+                <a class="dropdown-item" href="../attendance/senate-at.html">Senate</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Party Loyalty
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="../loyalty/house-loy.html">House</a>
+                <a class="dropdown-item" href="../loyalty/senate-loy.html">Senate</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbardrop" data-toggle="dropdown">
+                State Legislatures
+              </a>
+              <div class="dropdown-menu big-menu">
+                <div class="container">
+                  <div class="row no-gutters">
+                    <div class='col-12 col-md-3'>
+                      <a href="?state=al" class="dropdown-item">Alabama</a>
+                      <a href="?state=ak" class="dropdown-item">Alaska</a>
+                      <a href="?state=as" class="dropdown-item">American Samoa</a>
+                      <a href="?state=az" class="dropdown-item">Arizona</a>
+                      <a href="?state=ar" class="dropdown-item">Arkansas</a>
+                      <a href="?state=ca" class="dropdown-item">California</a>
+                      <a href="?state=co" class="dropdown-item">Colorado</a>
+                      <a href="?state=ct" class="dropdown-item">Connecticut</a>
+                      <a href="?state=de" class="dropdown-item">Delaware</a>
+                      <a href="?state=fl" class="dropdown-item">Florida</a>
+                      <a href="?state=ga" class="dropdown-item">Georgia</a>
+                      <a href="?state=gu" class="dropdown-item">Guam</a>
+                      <a href="?state=hi" class="dropdown-item">Hawaii</a>
+                      <a href="?state=ia" class="dropdown-item">Iowa</a>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <a href="?state=id" class="dropdown-item">Idaho</a>
+                      <a href="?state=il" class="dropdown-item">Illinois</a>
+                      <a href="?state=in" class="dropdown-item">Indiana</a>
+                      <a href="?state=ks" class="dropdown-item">Kansas</a>
+                      <a href="?state=ky" class="dropdown-item">Kentucky</a>
+                      <a href="?state=la" class="dropdown-item">Lousiana</a>
+                      <a href="?state=ma" class="dropdown-item">Massachusetts</a>
+                      <a href="?state=md" class="dropdown-item">Maryland</a>
+                      <a href="?state=me" class="dropdown-item">Maine</a>
+                      <a href="?state=mi" class="dropdown-item">Michigan</a>
+                      <a href="?state=mn" class="dropdown-item">Minnesota</a>
+                      <a href="?state=mo" class="dropdown-item">Missouri</a>
+                      <a href="?state=mp" class="dropdown-item">Mariana Islands</a>
+                      <a href="?state=ms" class="dropdown-item">Mississippi</a>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <a href="?state=mt" class="dropdown-item">Montana</a>
+                      <a href="?state=nc" class="dropdown-item">North Calorina</a>
+                      <a href="?state=nd" class="dropdown-item">North Dakota</a>
+                      <a href="?state=ne" class="dropdown-item">Nebraska</a>
+                      <a href="?state=nh" class="dropdown-item">New Hampshire</a>
+                      <a href="?state=nj" class="dropdown-item">New Jersey</a>
+                      <a href="?state=nm" class="dropdown-item">New Mexico</a>
+                      <a href="?state=nv" class="dropdown-item">Nevada</a>
+                      <a href="?state=ny" class="dropdown-item">New York</a>
+                      <a href="?state=oh" class="dropdown-item">Ohio</a>
+                      <a href="?state=ok" class="dropdown-item">Oklahoma</a>
+                      <a href="?state=or" class="dropdown-item">Oregon</a>
+                      <a href="?state=pa" class="dropdown-item">Pennsylvania</a>
+                      <a href="?state=pr" class="dropdown-item">Puerto Rico</a>
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <a href="?state=ri" class="dropdown-item">Rhode Island</a>
+                      <a href="?state=sc" class="dropdown-item">South Carolina</a>
+                      <a href="?state=sd" class="dropdown-item">South Dakota</a>
+                      <a href="?state=tn" class="dropdown-item">Tennessee</a>
+                      <a href="?state=tx" class="dropdown-item">Texas</a>
+                      <a href="?state=ut" class="dropdown-item">Utah</a>
+                      <a href="?state=va" class="dropdown-item">Virginia</a>
+                      <a href="?state=vi" class="dropdown-item">Virgin Islands</a>
+                      <a href="?state=vt" class="dropdown-item">Vermont</a>
+                      <a href="?state=wa" class="dropdown-item">Washington</a>
+                      <a href="?state=wi" class="dropdown-item">Wisconsin</a>
+                      <a href="?state=wv" class="dropdown-item">West Virginia</a>
+                      <a href="?state=wy" class="dropdown-item">Wyoming</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- Contenido -->
+    <div class="row mt-2">
+      <div id="cargando" class="col-md-1 offset-md-4" v-show='loading'>
+        <img src="../img/loader.gif" alt="Cargando" class="ml-5">
+      </div>
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class='table table-hover' v-show='show'>
+            <thead class="thead-light">
+              <tr>
+                <th>Name</th>
+                <th>Party</th>
+                <th>Chamber</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for='legislador of legisladores'>
+                <td><a :href="legislador.url">{{legislador.full_name}}</a></td>
+                <td>{{legislador.party}}</td>
+                <td>{{getChamber(legislador.chamber)}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Alerta -->
+    <div class="alert alert-danger col-12 mt-2" v-show='alerta'>
+      <strong><i class="fas fa-exclamation-triangle"></i> Cannot retrieve information from API.</strong> Try
+      again in a few
+      seconds.
+    </div>
+    <!-- Footer -->
+    <div class="container">
+      <div class="row mt-2">
+        <p class="card card-body text-center bg-light">© 2016 TGIF | All rights reserved</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <!-- Links JavaScript -->
+  <script src="/js/legislatures.js"></script>
+</body>
+
+</html>

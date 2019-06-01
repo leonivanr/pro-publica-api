@@ -4,5 +4,9 @@ body {
 .btn {
   white-space: normal;
 }
+.big-menu {
+  width: 660px !important;
+  overflow: hidden;
+}
 
 
