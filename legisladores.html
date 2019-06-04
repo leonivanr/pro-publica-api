@@ -7,9 +7,10 @@
   <title>113° Congress | State Legislatures</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="./styles/style.css">
   <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="icon" type="image/png" href="../img/favicon.png" />
 </head>
 <!-- body -->
@@ -18,7 +19,7 @@
   <div id="vue-app" class="container mt-4">
     <!-- Header -->
     <div class="row">
-      <div class="col-12 col-md-4"><a href="../index.html"><img src="../img/logo.png" class="img-fluid" alt="Logo"></a>
+      <div class="col-12 col-md-4"><a href="./index.html"><img src="./img/logo.png" class="img-fluid" alt="Logo"></a>
       </div>
       <div class="d-none d-md-block col-md-8 text-right"><i class="fas fa-envelope"></i> <a
           href="emailto:info@tgif.com">info@tgif</a></div>
@@ -30,7 +31,7 @@
           <!-- Links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="../index.html">Home</a>
+              <a class="nav-link" href="./index.html">Home</a>
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -38,8 +39,8 @@
                 Congress 113
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="../congress/house.html">House</a>
-                <a class="dropdown-item" href="../congress/senate.html">Senate</a>
+                <a class="dropdown-item" href="congress/house.html">House</a>
+                <a class="dropdown-item" href="congress/senate.html">Senate</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -47,8 +48,8 @@
                 Attendance
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="../attendance/house-at.html">House</a>
-                <a class="dropdown-item" href="../attendance/senate-at.html">Senate</a>
+                <a class="dropdown-item" href="attendance/house-at.html">House</a>
+                <a class="dropdown-item" href="attendance/senate-at.html">Senate</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -56,8 +57,8 @@
                 Party Loyalty
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="../loyalty/house-loy.html">House</a>
-                <a class="dropdown-item" href="../loyalty/senate-loy.html">Senate</a>
+                <a class="dropdown-item" href="loyalty/house-loy.html">House</a>
+                <a class="dropdown-item" href="loyalty/senate-loy.html">Senate</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -141,11 +142,11 @@
     <!-- Contenido -->
     <div class="row mt-2">
       <div id="cargando" class="col-md-1 offset-md-4" v-show='loading'>
-        <img src="../img/loader.gif" alt="Cargando" class="ml-5">
+        <img src="./img/loader.gif" alt="Cargando" class="ml-5">
       </div>
       <div class="col-md-12">
         <div class="table-responsive">
-          <table class='table table-hover' v-show='show'>
+          <table id="table-leg" class="table table-hover" v-show="show">
             <thead class="thead-light">
               <tr>
                 <th>Name</th>
@@ -155,7 +156,7 @@
             </thead>
             <tbody>
               <tr v-for='legislador of legisladores'>
-                <td><a :href="legislador.url">{{legislador.full_name}}</a></td>
+                <td><a :href="legislador.url" >{{legislador.full_name}}</a></td>
                 <td>{{legislador.party}}</td>
                 <td>{{getChamber(legislador.chamber)}}</td>
               </tr>
@@ -185,9 +186,11 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- <script src="/js/jquery.colorbox.js"></script> -->
 
   <!-- Links JavaScript -->
-  <script src="/js/legislatures.js"></script>
+  <script src="./js/legislatures.js"></script>
+
 </body>
 
 </html>

@@ -1,11 +1,9 @@
 var siteUrl = '';
-
 if (document.getElementById('senate')) {
     siteUrl = 'https://api.propublica.org/congress/v1/113/senate/members.json';
 } else if (document.getElementById('house')) {
     siteUrl = 'https://api.propublica.org/congress/v1/113/house/members.json';
 }
-
 var app = new Vue({
     el: '#vue-app',
     data: {
@@ -29,13 +27,56 @@ var app = new Vue({
         alerta: false,
     },
     methods: {
-        getData: () => {
-            fetch(app.siteUrl, {
-                    headers: new Headers({
+        cachedFetch: (url, cacheKey = url) => {
+            let cached = sessionStorage.getItem(cacheKey);
+            if (cached !== null) {
+                console.log('---------------')
+                console.log('CACHEADO')
+                console.log('---------------')
+
+                app.membersList = JSON.parse(cached).results[0].members;
+                app.membersAux = JSON.parse(cached).results[0].members;
+                app.numberOfDemocrats = app.countMembers(JSON.parse(cached).results[0].members, 'D');
+                app.numberOfRepublicans = app.countMembers(JSON.parse(cached).results[0].members, 'R');
+                app.numberOfIndependents = app.countMembers(JSON.parse(cached).results[0].members, 'I');
+                app.averageVotesAll = app.averageVotesWithPartyAll(JSON.parse(cached).results[0].members);
+                app.averageVotesDemocrats = app.averageVotesWithParty(JSON.parse(cached).results[0].members, 'D');
+                app.averageVotesRepublicans = app.averageVotesWithParty(JSON.parse(cached).results[0].members, 'R');
+                app.averageVotesIndependents = app.averageVotesWithParty(JSON.parse(cached).results[0].members, 'I');
+                app.mostAttendance = app.mostLeast(JSON.parse(cached).results[0].members, 'most', 'attendance');
+                app.leastAttendance = app.mostLeast(JSON.parse(cached).results[0].members, 'least', 'attendance');
+                app.mostLoyal = app.mostLeast(JSON.parse(cached).results[0].members, 'most', 'loyal');
+                app.leastLoyal = app.mostLeast(JSON.parse(cached).results[0].members, 'least', 'loyal');
+                app.totalMembers = (app.numberOfDemocrats + app.numberOfIndependents + app.numberOfRepublicans);
+
+
+                setTimeout(() => {
+                    app.loading = false;
+                    app.show = true;
+                }, 500)
+                return Promise.resolve(new Response(new Blob([cached])));
+            }
+
+            return fetch(url, {
+                    headers: {
                         'X-API-Key': 'D2sQEk1LttT9w8Vydx7vfZZtD3Cag10zupr6TxbL'
-                    })
+                    }
                 })
-                .then((respuesta) => respuesta.json()) // Transforma los datos en JSON.
+                .then(response => {
+                    console.log('---------------')
+                    console.log('AJAX')
+                    console.log('---------------')
+                    if (response.status === 200) {
+                        response.clone().text().then(content => {
+                            sessionStorage.setItem(cacheKey, content);
+                        })
+                    }
+                    setTimeout(() => {
+                        app.loading = false;
+                        app.show = true;
+                    }, 500)
+                    return response.json();
+                })
                 .then((jsonData) => {
                     app.membersList = jsonData.results[0].members;
                     app.membersAux = jsonData.results[0].members;
@@ -177,4 +218,4 @@ var app = new Vue({
 
     },
 })
-app.getData();
+app.cachedFetch(app.siteUrl);

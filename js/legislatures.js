@@ -45,6 +45,7 @@ var app = new Vue({
                 })
                 .then((jsonData) => {
                     app.legisladores = jsonData;
+
                 })
                 // Intento mostrar los datos que recibo por consola.
                 .catch((error) => {
@@ -60,5 +61,6 @@ var app = new Vue({
             }
         },
     },
+
 })
-app.cachedFetch(app.url+app.stateSearch);
+app.cachedFetch(app.url + app.stateSearch);
